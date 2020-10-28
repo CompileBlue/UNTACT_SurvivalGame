@@ -308,7 +308,6 @@ GameObject:
   m_Component:
   - component: {fileID: 837981926}
   - component: {fileID: 837981925}
-  - component: {fileID: 837981924}
   - component: {fileID: 837981923}
   - component: {fileID: 837981922}
   - component: {fileID: 837981921}
@@ -378,20 +377,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &837981924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837981920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edcbce78464195a4ca379ae29826a387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  playerRigidbody: {fileID: 0}
 --- !u!212 &837981925
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -450,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837981920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.11, y: 1.76, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -611,7 +596,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1732627296}
   - component: {fileID: 1732627295}
-  - component: {fileID: 1732627294}
   - component: {fileID: 1732627293}
   - component: {fileID: 1732627292}
   - component: {fileID: 1732627291}
@@ -681,20 +665,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1732627294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732627290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edcbce78464195a4ca379ae29826a387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  playerRigidbody: {fileID: 0}
 --- !u!212 &1732627295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -753,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732627290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.42, y: -1.62, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
