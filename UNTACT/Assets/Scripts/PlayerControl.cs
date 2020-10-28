@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed;
+
+    public Rigidbody2D playerRigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRigidbody = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -19,21 +22,17 @@ public class PlayerControl : MonoBehaviour
     }
     void Move()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-        }
+        /* This function is used for movement of player. 
+         * If you press Arrow Key, the player will move.*/
+
+        float xInput = Input.GetAxis("Horizontal");
+        float yInput = Input.GetAxis("Vertical");
+
+        float xSpeed = xInput * moveSpeed;
+        float ySpeed = yInput * moveSpeed;
+
+        Vector3 newVelocity = new Vector3(xSpeed, ySpeed, 0f);
+        playerRigidbody.velocity = newVelocity;
+        
     }
 }
