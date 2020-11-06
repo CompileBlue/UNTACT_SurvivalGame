@@ -15,7 +15,8 @@ public class RoofControl : MonoBehaviour
         isEnter = false;
         transparency = 1f;
         sprender = gameObject.GetComponent<SpriteRenderer>();
-        sprender.color = new Color(1f, 1f, 1f, 1f);
+        sprender.color = new Color(sprender.color.r, sprender.color.g, sprender.color.b, 1f);
+        
     }
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class RoofControl : MonoBehaviour
                 transparency = 1;
             }
         }
-        sprender.color = new Color(1f, 1f, 1f, transparency);
+        sprender.color = new Color(sprender.color.r, sprender.color.g, sprender.color.b, transparency);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
