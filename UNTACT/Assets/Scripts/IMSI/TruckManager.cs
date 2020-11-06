@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class TruckManager : MonoBehaviour
 {
-    public float moveSpeed;
-    public Transform endPoint;
-    public Transform startPoint;
+    // public float moveSpeed;
+    // public Transform endPoint;
+    // public Transform startPoint;
     public float delayTime = 1.2f;
     private float fTickTime;
 
@@ -25,8 +25,8 @@ public class TruckManager : MonoBehaviour
     {
         if (Wait(delayTime))
         {
-            Vector3 velocity = Vector3.zero;
-            transform.position = Vector3.MoveTowards(transform.position, endPoint.position, moveSpeed * Time.deltaTime);
+            // Vector3 velocity = Vector3.zero;
+            // transform.position = Vector3.MoveTowards(transform.position, endPoint.position, moveSpeed * Time.deltaTime);
         }
     }
 
