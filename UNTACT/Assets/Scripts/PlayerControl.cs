@@ -1,24 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
     public float moveSpeed;
 
-    public Rigidbody2D playerRigidbody;
+    private float playTime = 0f;
+    private float thisTime = 0f;
+
+    private float satiation = 100;
+    private float satiationSpeed = 1f;
+    private float health = 100;
+    private float healthSpeed = 1;
+
+    private bool isTutorial = true;
+
+    public TextMeshProUGUI tutorialText;
+    Rigidbody2D playerRigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
-
+        tutorialText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        Status();
     }
     void Move()
     {
@@ -34,5 +47,25 @@ public class PlayerControl : MonoBehaviour
         Vector3 newVelocity = new Vector3(xSpeed, ySpeed, 0f);
         playerRigidbody.velocity = newVelocity;
         
+    }
+    
+    void Status()
+    {
+        playTime += Time.deltaTime;
+
+        if((int)playTime % 10 == 0 && thisTime != (int)playTime)
+        {
+            thisTime = (int)playTime;
+            satiation -= satiationSpeed;
+            Debug.Log(satiation);
+        }
+    }
+    void Tutorial()
+    {
+        if (isTutorial)
+        {
+            isTutorial = false;
+
+        }
     }
 }
