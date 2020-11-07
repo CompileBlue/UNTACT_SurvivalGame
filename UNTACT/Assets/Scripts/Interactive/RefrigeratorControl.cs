@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class RefrigeratorControl : MonoBehaviour
 {
-    public Image refrigeratorUI;
+    public GameObject refrigeratorUI;
+
+    public GameObject contentPanel;
 
     private bool isEnter;
     // Start is called before the first frame update
