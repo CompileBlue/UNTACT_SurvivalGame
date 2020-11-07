@@ -299,7 +299,7 @@ SpriteRenderer:
   m_Size: {x: 3.6, y: 3.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &401422298
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  playerRigidbody: {fileID: 885343491}
+  tutorialText: {fileID: 0}
 --- !u!212 &885343493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 885343489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc09bc1da798484daf9dcf1b401167a, type: 3}
+  m_Script: {fileID: 11500000, guid: af3e5464bdbee8f44b3ec6aa23d5102c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   talkPanel: {fileID: 1595922183}
@@ -717,31 +717,9 @@ MonoBehaviour:
   fadeImage: {fileID: 2085676237}
   playerTransform: {fileID: 885343494}
   targetTransform: {fileID: 2138631255}
-  delayTime: 2
   fadeSpeed: 0.4
-  moveSpeed: 2
-  dialogue:
-  - text: "\uC774\uC81C \uB9C9 20\uC0B4\uC774 \uB41C \uB098\uB294 KH\uB300\uD559\uAD50\uC5D0
-      \uB2E4\uB2C8\uACE0 \uC788\uB2E4."
-  - text: "\uD559\uAD50\uAE4C\uC9C0\uC758 \uAC70\uB9AC\uAC00 \uBA3C \uAD00\uACC4\uB85C,
-      \uB098\uB294 \uADF8\uB3D9\uC548 \uC54C\uBC14\uB85C \uBAA8\uC558\uB358 \uB3C8\uACFC
-      \uBD80\uBAA8\uB2D8\uAED8\uC11C \uC9C0\uC6D0\uD574\uC8FC\uC2E0 \n\uB3C8\uC744
-      \uD569\uCCD0 \uC11C\uC6B8\uC5D0 \uC790\uCDE8\uBC29\uC744 \uC5BB\uAC8C \uB418\uC5C8\uACE0,
-      \uC624\uB298\uC774 \uC790\uCDE8\uBC29\uC73C\uB85C \uC774\uC0AC\uD558\uB294
-      \uB0A0\uC774\uB2E4."
-  - text: "\uB098\uB3C4 \uC774\uC81C \uB300\uD559\uC0DD\uC774\uAD6C\uB098."
-  - text: "\uACE7\uC774\uC5B4 \uD3BC\uCCD0\uC9C8 \uCEA0\uD37C\uC2A4 \uB77C\uC774\uD504\uB97C
-      \uC0DD\uAC01\uD558\uBA70 \uC0C1\uC0C1\uC758 \uB098\uB798\uB97C \uD3BC\uCCE4\uB2E4."
-  - text: "\uBC9A\uAF43\uC774 \uB9CC\uC5F0\uD560 \uBD04\uC758 \uCEA0\uD37C\uC2A4,
-      \uC0AC\uB78C\uB4E4\uC758 \uC5F4\uAE30\uB85C \uAC00\uB4DD\uD560 \uAC00\uC744\uC758
-      \uCD95\uC81C."
-  - text: "\uC6B0\uB9AC \uD559\uAD50 \uBC9A\uAF43\uC774 \uADF8\uB807\uAC8C \uC608\uC058\uB2E4\uB358\uB370,
-      \uB098\uB3C4 \uC911\uAC04\uACE0\uC0AC \uB9D0\uACE0 \uBC9A\uAF43\uC744 \uD568\uAED8
-      \uBCFC \uC0AC\uB78C\uC774\n\uB098\uD0C0\uB0A0\uAE4C?"
-  - text: "\uCE5C\uAD6C\uB3C4 \uB9CE\uC774 \uB9CC\uB098\uACE0, \uADF8\uB7EC\uB2E4
-      \uBCF4\uBA74 \uC5F0\uC560\uB3C4 \uD560 \uC218 \uC788\uACA0\uC9C0?"
-  - text: "\uC5F0\uC560\uB97C \uC0DD\uAC01\uD558\uB2C8 \uC6B0\uC6B8\uD574\uC84C\uB2E4.
-      \uC5BC\uB978 \uB4E4\uC5B4\uAC00\uC790."
+  moveSpeed: 0
+  dialogue: []
 --- !u!1 &975841745
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +862,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1055489314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055489316}
+  - component: {fileID: 1055489315}
+  m_Layer: 0
+  m_Name: TextData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1055489315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055489314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c019062fa0bc9c44fbce24c4b7c7946e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1055489316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055489314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1200005766
 GameObject:
