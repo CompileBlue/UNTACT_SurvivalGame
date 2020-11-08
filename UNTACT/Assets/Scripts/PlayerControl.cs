@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
+    public static Dictionary<int, int> itemList = new Dictionary<int, int>();
     public float moveSpeed;
 
     private float playTime = 0f;
@@ -46,7 +47,6 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 newVelocity = new Vector3(xSpeed, ySpeed, 0f);
         playerRigidbody.velocity = newVelocity;
-        
     }
     
     void Status()
@@ -68,4 +68,5 @@ public class PlayerControl : MonoBehaviour
 
         }
     }
+
 }

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ItemControl : MonoBehaviour
+public class RefrigeratorControl : MonoBehaviour
 {
+    public GameObject refrigeratorUI;
+
     private bool isEnter;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,20 @@ public class ItemControl : MonoBehaviour
     {
         Interact();
     }
+    void Interact()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && isEnter)
+        {
+            Debug.Log("Open Refrigerator.");
+            refrigeratorUI.gameObject.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            refrigeratorUI.gameObject.SetActive(false);
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         /* This conditional sentence is help you to interact with item or object.
@@ -23,24 +40,14 @@ public class ItemControl : MonoBehaviour
          * If you press F button, the door is open.*/
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("Interact with Player, Item");
             isEnter = true;
         }
-
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("Away from Player, Item");
             isEnter = false;
-        }
-    }
-    void Interact()
-    {
-        if (Input.GetKeyDown(KeyCode.F) && isEnter)
-        {
-            Debug.Log("Press F Button");
         }
     }
 }
