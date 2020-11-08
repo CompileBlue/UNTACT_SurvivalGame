@@ -6,26 +6,28 @@ using TMPro;
 public class PlayerControl : MonoBehaviour
 {
     public static Dictionary<int, int> itemList = new Dictionary<int, int>();
+
+    public TextMeshProUGUI satiationText;
+    public TextMeshProUGUI tutorialText;
+
     public float moveSpeed;
 
     private float playTime = 0f;
     private float thisTime = 0f;
 
-    private float satiation = 100;
-    private float satiationSpeed = 1f;
-    private float health = 100;
-    private float healthSpeed = 1;
+    private int satiation = 100;
+    private int satiationSpeed = 1;
+    private int health = 100;
+    private int healthSpeed = 1;
 
     private bool isTutorial = true;
 
-    public TextMeshProUGUI tutorialText;
     Rigidbody2D playerRigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
-        tutorialText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -57,16 +59,16 @@ public class PlayerControl : MonoBehaviour
         {
             thisTime = (int)playTime;
             satiation -= satiationSpeed;
-            Debug.Log(satiation);
         }
+        satiationText.text = satiation.ToString();
     }
-    void Tutorial()
+    /*void Tutorial()
     {
         if (isTutorial)
         {
             isTutorial = false;
 
         }
-    }
+    }*/
 
 }
