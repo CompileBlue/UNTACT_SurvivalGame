@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ItemControl : MonoBehaviour
 {
     public GameObject verticalPanel;
     public GameObject contentPanel;
 
-    public int itemCode;
+    SpriteRenderer icon_spriteRenderer;
+
+    public string itemName;
     public int itemCount;
 
     private bool isEnter;
@@ -47,16 +51,21 @@ public class ItemControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && isEnter)
         {
             Debug.Log("Press F Button");
-            PlayerControl.itemList.Add(itemCode, itemCount);
+            PlayerControl.itemList.Add(itemName, itemCount);
             
             GameObject content = Instantiate(contentPanel);
             content.transform.parent = verticalPanel.transform;
             content.transform.localScale = new Vector3(1f, 1f, 1f);
 
             GameObject icon = content.transform.GetChild(0).gameObject;
-            GameObject name = content.transform.GetChild(0).gameObject;
-            GameObject count = content.transform.GetChild(0).gameObject;
+            GameObject name = content.transform.GetChild(1).gameObject;
+            GameObject count = content.transform.GetChild(2).gameObject;
 
+            string path = "Item/Icon/" + itemName + ".jpg";
+            Image icon_image = icon.GetComponent<Image>();
+            icon_image.sprite = Resources.Load<Sprite>(path);
+            
+            
             
 
         }

@@ -5,7 +5,7 @@ using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
-    public static Dictionary<int, int> itemList = new Dictionary<int, int>();
+    public static Dictionary<string, int> itemList = new Dictionary<string, int>();
 
     public TextMeshProUGUI satiationText;
     public TextMeshProUGUI tutorialText;
