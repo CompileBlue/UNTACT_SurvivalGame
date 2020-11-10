@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -7,13 +8,16 @@ public class PlayerControl : MonoBehaviour
 {
     public static Dictionary<string, int> itemList = new Dictionary<string, int>();
 
+    public TextMeshProUGUI timeText;
     public TextMeshProUGUI satiationText;
     public TextMeshProUGUI tutorialText;
+    public TextMeshProUGUI dayText;
 
     public float moveSpeed;
 
-    private float playTime = 0f;
-    private float thisTime = 0f;
+    private float playTime = 36000f;
+    private int playDay = 1;
+    private float thisTime = 36000f;
 
     private int satiation = 100;
     private int satiationSpeed = 1;
@@ -35,6 +39,8 @@ public class PlayerControl : MonoBehaviour
     {
         Move();
         Status();
+        PhoneUI();
+        TimeControl();
     }
     void Move()
     {
@@ -60,7 +66,25 @@ public class PlayerControl : MonoBehaviour
             thisTime = (int)playTime;
             satiation -= satiationSpeed;
         }
+    }
+    void PhoneUI()
+    {
+        timeText.text = ((int)(playTime / 3600)).ToString("00") + ":" + ((int)(playTime % 3600 / 60)).ToString("00") + ":" + ((int)(playTime % 60)).ToString("00");
         satiationText.text = satiation.ToString();
+    }
+    void TimeControl()
+    {
+        if(playTime >= 86400)
+        {
+            playTime = 0;
+            playDay += 1;
+        }
+        if(playTime >= 79200)
+        {
+            playTime = 36000;
+            playDay += 1;
+        }
+        dayText.text = "+" + playDay.ToString();
     }
     /*void Tutorial()
     {
