@@ -51,22 +51,51 @@ public class ItemControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && isEnter)
         {
             Debug.Log("Press F Button");
-            PlayerControl.itemList.Add(itemName, itemCount);
-            
-            GameObject content = Instantiate(contentPanel);
-            content.transform.parent = verticalPanel.transform;
-            content.transform.localScale = new Vector3(1f, 1f, 1f);
 
-            GameObject icon = content.transform.GetChild(0).gameObject;
-            GameObject name = content.transform.GetChild(1).gameObject;
-            GameObject count = content.transform.GetChild(2).gameObject;
+            bool isHas = false;
+            foreach(var key in PlayerControl.itemList.Keys)
+            {
+                if(key == itemName)
+                {
+                    isHas = true;
+                    break;
+                }
+            }
+            if (!isHas)
+            {
+                PlayerControl.itemList.Add(itemName, itemCount);
 
-            string path = "Item/Icon/" + itemName + ".jpg";
-            Image icon_image = icon.GetComponent<Image>();
-            icon_image.sprite = Resources.Load<Sprite>(path);
-            
-            
-            
+                GameObject content = Instantiate(contentPanel);
+                content.transform.parent = verticalPanel.transform;
+                content.transform.localScale = new Vector3(1f, 1f, 1f);
+                content.name = itemName;
+
+                GameObject icon = content.transform.GetChild(0).gameObject;
+                GameObject name = content.transform.GetChild(1).gameObject;
+                GameObject count = content.transform.GetChild(2).GetChild(0).gameObject;
+
+                string path = "Item/Icon/" + itemName;
+                Image icon_image = icon.GetComponent<Image>();
+                icon_image.sprite = Resources.Load<Sprite>(path);
+
+                TextMeshProUGUI name_text = name.GetComponent<TextMeshProUGUI>();
+                name_text.text = itemName;
+
+                TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
+                count_text.text = PlayerControl.itemList[itemName].ToString();
+            }
+            else
+            {
+                PlayerControl.itemList[itemName] += itemCount;
+
+                GameObject content = verticalPanel.transform.FindChild(itemName).gameObject;
+
+                GameObject count = content.transform.GetChild(2).GetChild(0).gameObject;
+
+                TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
+                count_text.text = PlayerControl.itemList[itemName].ToString();
+            }
+            Destroy(gameObject);
 
         }
     }
