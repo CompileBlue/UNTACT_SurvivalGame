@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour
     private int playDay = 1;
     private float thisTime = 36000f;
 
-    private int satiation = 100;
+    public static int satiation = 100;
     private int satiationSpeed = 1;
     private int health = 100;
     private int healthSpeed = 1;
@@ -61,15 +61,25 @@ public class PlayerControl : MonoBehaviour
     {
         playTime += Time.deltaTime;
 
-        if((int)playTime % 10 == 0 && thisTime != (int)playTime)
+        if((int)playTime % 3 == 0 && thisTime != (int)playTime)
         {
             thisTime = (int)playTime;
             satiation -= satiationSpeed;
+            health -= healthSpeed;
+        }
+        if(satiation >= 100)
+        {
+            satiation = 100;
+        }
+        if (health >= 100)
+        {
+            health = 100;
         }
     }
     void PhoneUI()
     {
-        timeText.text = ((int)(playTime / 3600)).ToString("00") + ":" + ((int)(playTime % 3600 / 60)).ToString("00") + ":" + ((int)(playTime % 60)).ToString("00");
+        timeText.text = ((int)(playTime / 3600)).ToString("00") + ":" + ((int)(playTime % 3600 / 60)).ToString("00");
+        timeText.text += (playTime >= 43200) ? " pm" : " am";
         satiationText.text = satiation.ToString();
     }
     void TimeControl()
@@ -84,7 +94,7 @@ public class PlayerControl : MonoBehaviour
             playTime = 36000;
             playDay += 1;
         }
-        dayText.text = "+" + playDay.ToString();
+        dayText.text = "Day - " + playDay.ToString();
     }
     /*void Tutorial()
     {

@@ -12,7 +12,7 @@ public class PhoneControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, -160, transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, -240, transform.localPosition.z);
     }
 
     // Update is called once per frame
@@ -24,11 +24,11 @@ public class PhoneControl : MonoBehaviour
     private void OnMouseDrag()
     {
         mouseNow = Input.mousePosition;
-        if (transform.localPosition.y <= -40 && mouseNow.y - mouseStart.y > 0)
+        if (transform.localPosition.y <= -120 && mouseNow.y - mouseStart.y > 0)
         {
             transform.localPosition += new Vector3(0, 20f, 0);
         }
-        if (transform.localPosition.y >= -140 && mouseNow.y - mouseStart.y < 0)
+        if (transform.localPosition.y >= -220 && mouseNow.y - mouseStart.y < 0)
         {
             transform.localPosition -= new Vector3(0, 20f, 0);
         }

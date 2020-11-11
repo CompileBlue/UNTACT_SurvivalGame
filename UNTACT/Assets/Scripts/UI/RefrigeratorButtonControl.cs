@@ -21,6 +21,7 @@ public class RefrigeratorButtonControl : MonoBehaviour
         if(PlayerControl.itemList[transform.parent.name] >= 1)
         {
             PlayerControl.itemList[transform.parent.name] -= 1;
+            PlayerControl.satiation += 10;
 
             GameObject count = transform.GetChild(0).gameObject;
             TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();

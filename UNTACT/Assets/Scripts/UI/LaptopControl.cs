@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LaptopControl : MonoBehaviour
 {
-    public Image laptopUI;
+    public GameObject laptopUI;
 
     private bool isEnter;
     // Start is called before the first frame update
@@ -23,10 +23,10 @@ public class LaptopControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && isEnter)
         {
-            Debug.Log("Open laptop.");
+            Debug.Log("Open Laptop.");
             laptopUI.gameObject.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || !isEnter)
         {
             laptopUI.gameObject.SetActive(false);
         }

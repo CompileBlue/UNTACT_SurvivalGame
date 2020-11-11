@@ -26,7 +26,7 @@ public class RefrigeratorControl : MonoBehaviour
             Debug.Log("Open Refrigerator.");
             refrigeratorUI.gameObject.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || !isEnter)
         {
             refrigeratorUI.gameObject.SetActive(false);
         }
