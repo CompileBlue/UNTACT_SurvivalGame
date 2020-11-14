@@ -7,11 +7,18 @@ using TMPro;
 public class PlayerControl : MonoBehaviour
 {
     public static Dictionary<string, int> itemList = new Dictionary<string, int>();
+    public static Dictionary<string, int> inventoryList = new Dictionary<string, int>();
+    public static int inventoryMax = 10;
+    public static int inventoryNow = 0;
+    public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
+    
 
     public TextMeshProUGUI timeText;
-    public TextMeshProUGUI satiationText;
-    public TextMeshProUGUI tutorialText;
     public TextMeshProUGUI dayText;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI satiationText;
+    public TextMeshProUGUI diseaseText;
+    public TextMeshProUGUI tutorialText;
 
     public float moveSpeed;
 
@@ -23,6 +30,7 @@ public class PlayerControl : MonoBehaviour
     private int satiationSpeed = 1;
     private int health = 100;
     private int healthSpeed = 1;
+    private string disease = "normal";
 
     private bool isTutorial = true;
 
@@ -80,7 +88,10 @@ public class PlayerControl : MonoBehaviour
     {
         timeText.text = ((int)(playTime / 3600)).ToString("00") + ":" + ((int)(playTime % 3600 / 60)).ToString("00");
         timeText.text += (playTime >= 43200) ? " pm" : " am";
-        satiationText.text = satiation.ToString();
+        healthText.text = "Health:" + health.ToString();
+        satiationText.text = "Hungry:" + satiation.ToString();
+        diseaseText.text = "Disease:" + disease;
+
     }
     void TimeControl()
     {

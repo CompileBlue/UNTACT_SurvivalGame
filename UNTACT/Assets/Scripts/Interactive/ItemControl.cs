@@ -7,7 +7,7 @@ using TMPro;
 public class ItemControl : MonoBehaviour
 {
     public GameObject verticalPanel;
-    public GameObject contentPanel;
+    public GameObject inventoryContent;
 
     SpriteRenderer icon_spriteRenderer;
 
@@ -63,26 +63,31 @@ public class ItemControl : MonoBehaviour
             }
             if (!isHas)
             {
-                PlayerControl.itemList.Add(itemName, itemCount);
+                if(PlayerControl.inventoryMax > PlayerControl.inventoryNow)
+                {
+                    PlayerControl.inventoryList.Add(itemName, itemCount);
+                    PlayerControl.inventoryNow += 1;
 
-                GameObject content = Instantiate(contentPanel);
-                content.transform.parent = verticalPanel.transform;
-                content.transform.localScale = new Vector3(1f, 1f, 1f);
-                content.name = itemName;
+                    GameObject content = Instantiate(inventoryContent);
+                    content.transform.parent = verticalPanel.transform;
+                    content.transform.localScale = new Vector3(1f, 1f, 1f);
+                    content.name = itemName;
 
-                GameObject icon = content.transform.GetChild(0).gameObject;
-                GameObject name = content.transform.GetChild(1).gameObject;
-                GameObject count = content.transform.GetChild(2).GetChild(0).gameObject;
+                    GameObject icon = content.transform.GetChild(0).gameObject;
+                    GameObject name = content.transform.GetChild(1).gameObject;
+                    GameObject count = content.transform.GetChild(2).GetChild(0).gameObject;
 
-                string path = "Item/Icon/" + itemName;
-                Image icon_image = icon.GetComponent<Image>();
-                icon_image.sprite = Resources.Load<Sprite>(path);
+                    string path = "Item/Icon/" + itemName;
+                    Image icon_image = icon.GetComponent<Image>();
+                    icon_image.sprite = Resources.Load<Sprite>(path);
 
-                TextMeshProUGUI name_text = name.GetComponent<TextMeshProUGUI>();
-                name_text.text = itemName;
+                    TextMeshProUGUI name_text = name.GetComponent<TextMeshProUGUI>();
+                    name_text.text = itemName;
 
-                TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
-                count_text.text = PlayerControl.itemList[itemName].ToString();
+                    TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
+                    count_text.text = PlayerControl.itemList[itemName].ToString();
+                    Destroy(gameObject);
+                }
             }
             else
             {
@@ -94,8 +99,8 @@ public class ItemControl : MonoBehaviour
 
                 TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
                 count_text.text = PlayerControl.itemList[itemName].ToString();
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
 
         }
     }
