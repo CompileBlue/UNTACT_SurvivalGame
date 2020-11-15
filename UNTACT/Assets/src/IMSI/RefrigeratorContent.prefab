@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932d04dff389f724aab3bee235e600fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count_text: {fileID: 5864109984083934929}
+  count_text_inventory: {fileID: 5864109984083934929}
 --- !u!1 &5586016495573514026
 GameObject:
   m_ObjectHideFlags: 0

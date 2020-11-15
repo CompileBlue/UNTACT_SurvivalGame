@@ -550,7 +550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182889212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.05, y: 4.26, z: 0}
+  m_LocalPosition: {x: 4.05, y: 4.26, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1596268625}
@@ -2999,8 +2999,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8778581900ee94bad8cc1c94dfc83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalPanel: {fileID: 1028038428}
-  inventoryContent: {fileID: 0}
+  inventoryPanel: {fileID: 1028038428}
+  refrigeratorPanel: {fileID: 1946311570}
+  content: {fileID: 5586016495573514026, guid: 3e6716a167afaa642815306b177d2243, type: 3}
   itemName: banana
   itemCount: 1
 --- !u!61 &1134861537
@@ -3124,8 +3125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8778581900ee94bad8cc1c94dfc83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalPanel: {fileID: 1028038428}
-  inventoryContent: {fileID: 0}
+  inventoryPanel: {fileID: 1028038428}
+  refrigeratorPanel: {fileID: 1946311570}
+  content: {fileID: 5586016495573514026, guid: 3e6716a167afaa642815306b177d2243, type: 3}
   itemName: banana
   itemCount: 1
 --- !u!61 &1248127726
@@ -3579,7 +3581,7 @@ GameObject:
   - component: {fileID: 1470469833}
   - component: {fileID: 1470469832}
   m_Layer: 5
-  m_Name: ScrollPanel
+  m_Name: ScrollPanel_P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5202,7 +5204,7 @@ RectTransform:
   m_GameObject: {fileID: 1810658802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2.9, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1282502115}
   m_RootOrder: 0
@@ -5462,8 +5464,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8778581900ee94bad8cc1c94dfc83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalPanel: {fileID: 1028038428}
-  inventoryContent: {fileID: 0}
+  inventoryPanel: {fileID: 1028038428}
+  refrigeratorPanel: {fileID: 1946311570}
+  content: {fileID: 5586016495573514026, guid: 3e6716a167afaa642815306b177d2243, type: 3}
   itemName: bread
   itemCount: 1
 --- !u!61 &1918401723
@@ -5571,7 +5574,7 @@ RectTransform:
   m_GameObject: {fileID: 1946311570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2.9, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 837749771}
   m_RootOrder: 0
