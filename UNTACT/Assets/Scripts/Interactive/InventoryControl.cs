@@ -67,6 +67,7 @@ public class InventoryControl : MonoBehaviour
                 if(PlayerControl.inventoryMax > PlayerControl.inventoryNow)
                 {
                     PlayerControl.inventoryList.Add(itemName, itemCount);
+                    PlayerControl.refrigeratorList.Add(itemName, 0);
                     PlayerControl.inventoryNow += 1;
 
                     GameObject content_inventory = Instantiate(content);

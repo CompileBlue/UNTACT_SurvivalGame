@@ -73,6 +73,7 @@ public class ItemButtonControl : MonoBehaviour
         {
             PlayerControl.inventoryList[transform.parent.name] -= 1;
             PlayerControl.refrigeratorList[transform.parent.name] += 1;
+            Debug.Log(PlayerControl.refrigeratorList[transform.parent.name]);
         }
     }
 
