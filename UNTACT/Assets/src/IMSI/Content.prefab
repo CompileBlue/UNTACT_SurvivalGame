@@ -410,6 +410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count_text: {fileID: 5864109984083934929}
+  content: {fileID: 5586016495573514026}
+  refrigeratorPanelL: {fileID: 4817209157969114216, guid: 2ef3657ea0498d84e9de13ce987787df,
+    type: 3}
 --- !u!1 &5586016495573514026
 GameObject:
   m_ObjectHideFlags: 0

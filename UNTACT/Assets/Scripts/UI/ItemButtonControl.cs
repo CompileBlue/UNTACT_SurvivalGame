@@ -56,8 +56,12 @@ public class ItemButtonControl : MonoBehaviour
         {
             RefrigeratorR();
         }
+        else if (transform.parent.parent.parent.name == "ScrollPanel_L")
+        {
+            RefrigeratorL();
+        }
 
-        
+
     }
     void PhoneItem()
     {
@@ -73,9 +77,16 @@ public class ItemButtonControl : MonoBehaviour
         {
             PlayerControl.inventoryList[transform.parent.name] -= 1;
             PlayerControl.refrigeratorList[transform.parent.name] += 1;
-            Debug.Log(PlayerControl.refrigeratorList[transform.parent.name]);
+
         }
     }
-
+    void RefrigeratorL()
+    {
+        if (PlayerControl.refrigeratorList[transform.parent.name] >= 1)
+        {
+            PlayerControl.refrigeratorList[transform.parent.name] -= 1;
+            PlayerControl.inventoryList[transform.parent.name] += 1;
+        }
+    }
 
 }
