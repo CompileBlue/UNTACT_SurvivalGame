@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     public static Dictionary<string, int> itemList = new Dictionary<string, int>();
     public static Dictionary<string, int> inventoryList = new Dictionary<string, int>();
     public static Dictionary<string, int> refrigeratorList = new Dictionary<string, int>();
+    public static Dictionary<string, int> laptopList = new Dictionary<string, int>();
     public static int inventoryMax = 10;
     public static int inventoryNow = 0;
     public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
@@ -68,7 +69,7 @@ public class PlayerControl : MonoBehaviour
     
     void Status()
     {
-        playTime += Time.deltaTime;
+        playTime += Time.deltaTime * 10;
 
         if((int)playTime % 3 == 0 && thisTime != (int)playTime)
         {

@@ -63,6 +63,7 @@ public class InventoryControl : MonoBehaviour
                 {
                     PlayerControl.inventoryList.Add(itemName, itemCount);
                     PlayerControl.refrigeratorList.Add(itemName, 0);
+                    PlayerControl.laptopList.Add(itemName, 0);
                     PlayerControl.inventoryNow += 1;
 
                 }
@@ -70,7 +71,6 @@ public class InventoryControl : MonoBehaviour
             else
             {
                 PlayerControl.inventoryList[itemName] += itemCount;
-
             }
 
             

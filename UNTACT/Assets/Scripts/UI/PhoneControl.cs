@@ -13,20 +13,29 @@ public class PhoneControl : MonoBehaviour
     private Vector2 mouseStart;
     private Vector2 mouseNow;
 
+    private AudioSource audioPlayer;
+    public AudioClip vibrationAudio;
+
     public GameObject[] Mode = new GameObject[5]; // 0 : Main, 1 : Health, 2 : Message, 3 : Inventory
 
     private bool isVibration;
     // Start is called before the first frame update
     void Start()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, -240, transform.localPosition.z);
+        audioPlayer = GetComponent<AudioSource>();
+        audioPlayer.clip = vibrationAudio;
+        audioPlayer.Stop();
+        audioPlayer.loop = true;
+        audioPlayer.time = 0;
+        audioPlayer.volume = 0.5F;
+
+        transform.localPosition = new Vector3(transform.localPosition.x, -290, transform.localPosition.z);
         isVibration = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vibration();
         if (Mode[3].activeSelf)
         {
             foreach (var itemName in PlayerControl.inventoryList.Keys)
@@ -47,11 +56,11 @@ public class PhoneControl : MonoBehaviour
         mouseNow = Input.mousePosition;
         if (transform.localPosition.y <= -120 && mouseNow.y - mouseStart.y > 0)
         {
-            transform.localPosition += new Vector3(0, 10f, 0);
+            transform.localPosition += new Vector3(0, 20f, 0);
         }
-        if (transform.localPosition.y >= -220 && mouseNow.y - mouseStart.y < 0)
+        if (transform.localPosition.y >= -280 && mouseNow.y - mouseStart.y < 0)
         {
-            transform.localPosition -= new Vector3(0, 10f, 0);
+            transform.localPosition -= new Vector3(0, 20f, 0);
         }
     }
     private void OnMouseDown()
@@ -130,7 +139,12 @@ public class PhoneControl : MonoBehaviour
     {
         if (isVibration)
         {
-            
+            audioPlayer.Play();
+        }
+        else
+        {
+            audioPlayer.Stop();
+            audioPlayer.time = 0;
         }
     }
 }
