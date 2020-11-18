@@ -19,6 +19,7 @@ public class PhoneControl : MonoBehaviour
     public GameObject[] Mode = new GameObject[5]; // 0 : Main, 1 : Health, 2 : Message, 3 : Inventory
 
     private bool isVibration;
+    private bool isCall;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,21 +73,17 @@ public class PhoneControl : MonoBehaviour
     {
         Debug.Log("Health");
         int mode = 1;
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 5; i++)
         {
             Mode[i].SetActive(false);
         }
         Mode[mode].SetActive(true);
     }
-    public void ProductionBtn()
-    {
-        Debug.Log("Production");
-    }
     public void MessageBtn()
     {
         Debug.Log("Message");
         int mode = 2;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             Mode[i].SetActive(false);
         }
@@ -96,7 +93,17 @@ public class PhoneControl : MonoBehaviour
     {
         Debug.Log("Inventory"); 
         int mode = 3;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
+        {
+            Mode[i].SetActive(false);
+        }
+        Mode[mode].SetActive(true);
+    }
+    public void BankBtn()
+    {
+        Debug.Log("Bank");
+        int mode = 4;
+        for (int i = 0; i < 5; i++)
         {
             Mode[i].SetActive(false);
         }
@@ -106,7 +113,7 @@ public class PhoneControl : MonoBehaviour
     {
         Debug.Log("Main");
         int mode = 0;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             Mode[i].SetActive(false);
         }

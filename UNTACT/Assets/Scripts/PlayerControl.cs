@@ -20,6 +20,7 @@ public class PlayerControl : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI satiationText;
     public TextMeshProUGUI diseaseText;
+    public TextMeshProUGUI moneyText;
     public TextMeshProUGUI tutorialText;
 
     public float moveSpeed;
@@ -33,6 +34,7 @@ public class PlayerControl : MonoBehaviour
     private int health = 100;
     private int healthSpeed = 1;
     private string disease = "normal";
+    private int money = 1000000;
 
     private bool isTutorial = true;
 
@@ -93,7 +95,7 @@ public class PlayerControl : MonoBehaviour
         healthText.text = "Health:" + health.ToString();
         satiationText.text = "Hungry:" + satiation.ToString();
         diseaseText.text = "Disease:" + disease;
-
+        moneyText.text = "Money : " + money; 
     }
     void TimeControl()
     {
