@@ -64,7 +64,7 @@ public class MainMenuManager : MonoBehaviour
             PlayFadeOut();
             if (fadeImage.color == Color.black)
             {
-                SceneManager.LoadScene("HouseOuter");
+                SceneManager.LoadScene("Outer_Intro");
             }
         }
     }

@@ -83,8 +83,8 @@ public class InventoryControl : MonoBehaviour
             {
                 PlayerControl.inventoryList[itemName] += itemCount;
 
-                GameObject content1 = inventoryPanel.transform.FindChild(itemName).gameObject;
-                GameObject content2 = refrigeratorPanel.transform.FindChild(itemName).gameObject;
+                GameObject content1 = inventoryPanel.transform.Find(itemName).gameObject;
+                GameObject content2 = refrigeratorPanel.transform.Find(itemName).gameObject;
 
                 GameObject count1 = content1.transform.GetChild(2).GetChild(0).gameObject;
                 GameObject count2 = content2.transform.GetChild(2).GetChild(0).gameObject;

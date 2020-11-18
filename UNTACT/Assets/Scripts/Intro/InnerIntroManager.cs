@@ -12,7 +12,6 @@ public class InnerIntroManager : MonoBehaviour
     public Image talkPanel;
     public Text txt_Dialogue;
     public RawImage fadeImage;
-    public RawImage playerNamePanel;
     public RawImage otherNamePanel;
     public Text playerNameText;
     public Text otherNameText;
@@ -90,14 +89,12 @@ public class InnerIntroManager : MonoBehaviour
     {
         if (_flag == true)
         {
-            playerNamePanel.gameObject.SetActive(_flag);
             playerNameText.gameObject.SetActive(_flag);
             otherNamePanel.gameObject.SetActive(!_flag);
             otherNameText.gameObject.SetActive(!_flag);
         }
         else
         {
-            playerNamePanel.gameObject.SetActive(_flag);
             playerNameText.gameObject.SetActive(_flag);
             otherNamePanel.gameObject.SetActive(!_flag);
             otherNameText.gameObject.SetActive(!_flag);
@@ -132,6 +129,8 @@ public class InnerIntroManager : MonoBehaviour
         }
 
         txt_Dialogue.text = allTextsInner[count];
+        talkPanel.transform.position = new Vector3(600, -20.22f, 0);
+        talkPanel.transform.DOMove(new Vector3(600, 0, 0), 0.5f);
         count++;
     }
 
