@@ -66,7 +66,15 @@ public class PlayerControl : MonoBehaviour
         float ySpeed = yInput * moveSpeed;
 
         Vector3 newVelocity = new Vector3(xSpeed, ySpeed, 0f);
-        playerRigidbody.velocity = newVelocity;
+
+        if (NPCControl.isTalk == true)
+        {
+            playerRigidbody.velocity = Vector3.zero;
+        }
+        else
+        {
+            playerRigidbody.velocity = newVelocity;
+        }
     }
     
     void Status()
