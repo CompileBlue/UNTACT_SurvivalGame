@@ -38,7 +38,6 @@ public class RefrigeratorControl : MonoBehaviour
             {
                 if (PlayerControl.inventoryList[itemName] >= 1)
                 {
-                    Debug.Log(itemName);
                     if (!refrigeratorPanelR.transform.FindChild(itemName))
                     {
                         SetItemR(itemName);
@@ -51,7 +50,6 @@ public class RefrigeratorControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && isEnter)
         {
-            Debug.Log("Open Refrigerator.");
             refrigeratorUI.gameObject.SetActive(true);
             
 

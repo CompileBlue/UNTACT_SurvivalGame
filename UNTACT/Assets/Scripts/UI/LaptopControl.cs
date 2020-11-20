@@ -14,49 +14,86 @@ public class LaptopControl : MonoBehaviour
     public GameObject laptopPanelR;
 
     private bool isEnter;
+
+    int recipeNum = 5;
+
+    List<List<string>> recipeList = new List<List<string>>();
     // Start is called before the first frame update
     void Start()
     {
         isEnter = false;
+
+        List<string> recipe = new List<string>();
+        recipe.Add("bread");
+        recipe.Add("1");
+        recipe.Add("banana");
+        recipe.Add("2");
+        recipeList.Add(recipe);
     }
 
     // Update is called once per frame
     void Update()
     {
         Interact();
-        foreach (var itemName in PlayerControl.inventoryList.Keys)
+        if (isEnter)
         {
-            if (PlayerControl.inventoryList[itemName] >= 1)
+            CheckRecipe();
+            foreach (var itemName in PlayerControl.inventoryList.Keys)
             {
-                Debug.Log(itemName);
-                if (!laptopPanelR.transform.FindChild(itemName))
+                if (PlayerControl.inventoryList[itemName] >= 1)
                 {
-                    SetItemR_pc(itemName);
+                    if (!laptopPanelR.transform.FindChild(itemName))
+                    {
+                        SetItemR_pc(itemName);
+                    }
+                }
+            }
+            foreach (var itemName in PlayerControl.laptopList.Keys)
+            {
+                if (PlayerControl.laptopList[itemName] >= 1)
+                {
+                    if (!laptopPanelD.transform.FindChild(itemName))
+                    {
+                        SetItemD_pc(itemName);
+                    }
                 }
             }
         }
-        foreach (var itemName in PlayerControl.laptopList.Keys)
-        {
-            if (PlayerControl.laptopList[itemName] >= 1)
-            {
-                Debug.Log(itemName);
-                if (!laptopPanelD.transform.FindChild(itemName))
-                {
-                    SetItemD_pc(itemName);
-                }
-            }
-        }
+        
     }
     void Interact()
     {
         if (Input.GetKeyDown(KeyCode.F) && isEnter)
         {
-            Debug.Log("Open Laptop.");
             laptopUI.gameObject.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Escape) || !isEnter)
         {
             laptopUI.gameObject.SetActive(false);
+        }
+    }
+
+    void CheckRecipe()
+    {
+        
+        for (int i = 0; i < recipeList.Count; i++)
+        {
+            int itemNum = 0;
+            foreach (var itemName in PlayerControl.laptopList.Keys)
+            {
+                for (int j = 0; j < recipeList[i].Count / 2; j++)
+                {
+                    if (recipeList[i][j * 2] == itemName && int.Parse(recipeList[i][j * 2 + 1]) <= PlayerControl.laptopList[itemName])
+                    {
+                        itemNum += 1;
+                    }
+                }
+                if(itemNum == recipeList[i].Count / 2)
+                {
+                    Debug.Log("can make");
+                }
+            }
+            
         }
     }
 

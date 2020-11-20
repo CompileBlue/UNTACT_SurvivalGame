@@ -29,7 +29,6 @@ public class InventoryControl : MonoBehaviour
          * If you press F button, the door is open.*/
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("Interact with Player, Item");
             isEnter = true;
         }
 
@@ -38,7 +37,6 @@ public class InventoryControl : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("Away from Player, Item");
             isEnter = false;
         }
     }
@@ -46,7 +44,6 @@ public class InventoryControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && isEnter)
         {
-            Debug.Log("Press F Button");
             bool isHas = false;
             
             foreach (var key in PlayerControl.inventoryList.Keys)

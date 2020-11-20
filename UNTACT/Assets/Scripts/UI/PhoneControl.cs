@@ -71,7 +71,6 @@ public class PhoneControl : MonoBehaviour
 
     public void HealthBtn()
     {
-        Debug.Log("Health");
         int mode = 1;
         for(int i = 0; i < 5; i++)
         {
@@ -81,7 +80,6 @@ public class PhoneControl : MonoBehaviour
     }
     public void MessageBtn()
     {
-        Debug.Log("Message");
         int mode = 2;
         for (int i = 0; i < 5; i++)
         {
@@ -91,7 +89,6 @@ public class PhoneControl : MonoBehaviour
     }
     public void InventoryBtn()
     {
-        Debug.Log("Inventory"); 
         int mode = 3;
         for (int i = 0; i < 5; i++)
         {
@@ -101,7 +98,6 @@ public class PhoneControl : MonoBehaviour
     }
     public void BankBtn()
     {
-        Debug.Log("Bank");
         int mode = 4;
         for (int i = 0; i < 5; i++)
         {
@@ -111,7 +107,6 @@ public class PhoneControl : MonoBehaviour
     }
     public void MainBtn()
     {
-        Debug.Log("Main");
         int mode = 0;
         for (int i = 0; i < 5; i++)
         {

@@ -10,9 +10,9 @@ public class PlayerControl : MonoBehaviour
     public static Dictionary<string, int> inventoryList = new Dictionary<string, int>();
     public static Dictionary<string, int> refrigeratorList = new Dictionary<string, int>();
     public static Dictionary<string, int> laptopList = new Dictionary<string, int>();
+    public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
     public static int inventoryMax = 10;
     public static int inventoryNow = 0;
-    public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
     
 
     public TextMeshProUGUI timeText;
