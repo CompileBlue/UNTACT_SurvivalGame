@@ -24,23 +24,23 @@ public class RefrigeratorControl : MonoBehaviour
         Interact();
         if (isEnter)
         {
-            foreach (var itemName in PlayerControl.refrigeratorList.Keys)
+            foreach (var itemCode in PlayerControl.refrigeratorList.Keys)
             {
-                if (PlayerControl.refrigeratorList[itemName] >= 1)
+                if (PlayerControl.refrigeratorList[itemCode] >= 1)
                 {
-                    if (!refrigeratorPanelL.transform.FindChild(itemName))
+                    if (!refrigeratorPanelL.transform.FindChild(itemCode))
                     {
-                        SetItemL(itemName);
+                        SetItemL(itemCode);
                     }
                 }
             }
-            foreach (var itemName in PlayerControl.inventoryList.Keys)
+            foreach (var itemCode in PlayerControl.inventoryList.Keys)
             {
-                if (PlayerControl.inventoryList[itemName] >= 1)
+                if (PlayerControl.inventoryList[itemCode] >= 1)
                 {
-                    if (!refrigeratorPanelR.transform.FindChild(itemName))
+                    if (!refrigeratorPanelR.transform.FindChild(itemCode))
                     {
-                        SetItemR(itemName);
+                        SetItemR(itemCode);
                     }
                 }
             }
@@ -60,49 +60,49 @@ public class RefrigeratorControl : MonoBehaviour
         }
     }
 
-    void SetItemL(string itemName)
+    void SetItemL(string itemCode)
     {
         GameObject content_refrigerator = Instantiate(content);
         content_refrigerator.transform.parent = refrigeratorPanelL.transform;
 
         content_refrigerator.transform.localScale = new Vector3(1f, 1f, 1f);
-        content_refrigerator.name = itemName;
+        content_refrigerator.name = itemCode;
 
         GameObject icon = content_refrigerator.transform.GetChild(0).gameObject;
         GameObject name = content_refrigerator.transform.GetChild(1).gameObject;
         GameObject count = content_refrigerator.transform.GetChild(2).GetChild(0).gameObject;
 
-        string path = "Item/Icon/" + itemName;
+        string path = "Item/Icon/" + itemCode;
         Image icon_image = icon.GetComponent<Image>();
         icon_image.sprite = Resources.Load<Sprite>(path);
 
         TextMeshProUGUI name_text = name.GetComponent<TextMeshProUGUI>();
-        name_text.text = itemName;
+        name_text.text = PlayerControl.itemList[int.Parse(itemCode)][1];
 
         TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
-        count_text.text = PlayerControl.refrigeratorList[itemName].ToString();
+        count_text.text = PlayerControl.refrigeratorList[itemCode].ToString();
     }
-    void SetItemR(string itemName)
+    void SetItemR(string itemCode)
     {
         GameObject content_refrigerator = Instantiate(content);
         content_refrigerator.transform.parent = refrigeratorPanelR.transform;
 
         content_refrigerator.transform.localScale = new Vector3(1f, 1f, 1f);
-        content_refrigerator.name = itemName;
+        content_refrigerator.name = itemCode;
 
         GameObject icon = content_refrigerator.transform.GetChild(0).gameObject;
         GameObject name = content_refrigerator.transform.GetChild(1).gameObject;
         GameObject count = content_refrigerator.transform.GetChild(2).GetChild(0).gameObject;
 
-        string path = "Item/Icon/" + itemName;
+        string path = "Item/Icon/" + itemCode;
         Image icon_image = icon.GetComponent<Image>();
         icon_image.sprite = Resources.Load<Sprite>(path);
 
         TextMeshProUGUI name_text = name.GetComponent<TextMeshProUGUI>();
-        name_text.text = itemName;
+        name_text.text = PlayerControl.itemList[int.Parse(itemCode)][1];
 
         TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
-        count_text.text = PlayerControl.inventoryList[itemName].ToString();
+        count_text.text = PlayerControl.inventoryList[itemCode].ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
-    public static Dictionary<string, int> itemList = new Dictionary<string, int>();
+    public static List<List<string>> itemList = new List<List<string>>();
     public static Dictionary<string, int> inventoryList = new Dictionary<string, int>();
     public static Dictionary<string, int> refrigeratorList = new Dictionary<string, int>();
     public static Dictionary<string, int> laptopList = new Dictionary<string, int>();
@@ -44,6 +45,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        CsvReader();
     }
 
     // Update is called once per frame
@@ -111,13 +113,21 @@ public class PlayerControl : MonoBehaviour
         }
         dayText.text = "Day - " + playDay.ToString();
     }
-    /*void Tutorial()
+
+    void CsvReader()
     {
-        if (isTutorial)
+        var reader = new StreamReader(File.OpenRead(@"../UNTACT/Assets/Resources/Item/itemList.csv"));
+        
+        while (!reader.EndOfStream)
         {
-            isTutorial = false;
-
+            var line = reader.ReadLine();
+            var values = line.Split(',');
+            List<string> list = new List<string>();
+            foreach(var content in values)
+            {
+                list.Add(content);
+            }
+            itemList.Add(list);
         }
-    }*/
-
+    }
 }

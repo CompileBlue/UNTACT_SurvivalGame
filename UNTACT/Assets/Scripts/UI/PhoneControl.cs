@@ -39,13 +39,13 @@ public class PhoneControl : MonoBehaviour
     {
         if (Mode[3].activeSelf)
         {
-            foreach (var itemName in PlayerControl.inventoryList.Keys)
+            foreach (var itemCode in PlayerControl.inventoryList.Keys)
             {
-                if (PlayerControl.inventoryList[itemName] >= 1)
+                if (PlayerControl.inventoryList[itemCode] >= 1)
                 {
-                    if (!inventoryPanel.transform.FindChild(itemName))
+                    if (!inventoryPanel.transform.FindChild(itemCode.ToString()))
                     {
-                        SetItemP(itemName);
+                        SetItemP(itemCode);
                     }
                 }
             }
@@ -115,27 +115,27 @@ public class PhoneControl : MonoBehaviour
         Mode[mode].SetActive(true);
     }
 
-    void SetItemP(string itemName)
+    void SetItemP(string itemCode)
     {
         GameObject content_inventory = Instantiate(content);
         content_inventory.transform.parent = inventoryPanel.transform;
 
         content_inventory.transform.localScale = new Vector3(1f, 1f, 1f);
-        content_inventory.name = itemName;
+        content_inventory.name = itemCode;
 
         GameObject icon = content_inventory.transform.GetChild(0).gameObject;
         GameObject name = content_inventory.transform.GetChild(1).gameObject;
         GameObject count = content_inventory.transform.GetChild(2).GetChild(0).gameObject;
 
-        string path = "Item/Icon/" + itemName;
+        string path = "Item/Icon/" + itemCode;
         Image icon_image = icon.GetComponent<Image>();
         icon_image.sprite = Resources.Load<Sprite>(path);
 
         TextMeshProUGUI name_text = name.GetComponent<TextMeshProUGUI>();
-        name_text.text = itemName;
+        name_text.text = PlayerControl.itemList[int.Parse(itemCode)][1];
 
         TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
-        count_text.text = PlayerControl.inventoryList[itemName].ToString();
+        count_text.text = PlayerControl.inventoryList[itemCode].ToString();
     }
     void Vibration ()
     {

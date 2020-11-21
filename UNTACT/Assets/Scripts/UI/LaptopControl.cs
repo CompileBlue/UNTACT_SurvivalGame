@@ -38,23 +38,23 @@ public class LaptopControl : MonoBehaviour
         if (isEnter)
         {
             CheckRecipe();
-            foreach (var itemName in PlayerControl.inventoryList.Keys)
+            foreach (var itemCode in PlayerControl.inventoryList.Keys)
             {
-                if (PlayerControl.inventoryList[itemName] >= 1)
+                if (PlayerControl.inventoryList[itemCode] >= 1)
                 {
-                    if (!laptopPanelR.transform.FindChild(itemName))
+                    if (!laptopPanelR.transform.FindChild(itemCode))
                     {
-                        SetItemR_pc(itemName);
+                        SetItemR_pc(itemCode);
                     }
                 }
             }
-            foreach (var itemName in PlayerControl.laptopList.Keys)
+            foreach (var itemCode in PlayerControl.laptopList.Keys)
             {
-                if (PlayerControl.laptopList[itemName] >= 1)
+                if (PlayerControl.laptopList[itemCode] >= 1)
                 {
-                    if (!laptopPanelD.transform.FindChild(itemName))
+                    if (!laptopPanelD.transform.FindChild(itemCode))
                     {
-                        SetItemD_pc(itemName);
+                        SetItemD_pc(itemCode);
                     }
                 }
             }
@@ -79,11 +79,11 @@ public class LaptopControl : MonoBehaviour
         for (int i = 0; i < recipeList.Count; i++)
         {
             int itemNum = 0;
-            foreach (var itemName in PlayerControl.laptopList.Keys)
+            foreach (var itemCode in PlayerControl.laptopList.Keys)
             {
                 for (int j = 0; j < recipeList[i].Count / 2; j++)
                 {
-                    if (recipeList[i][j * 2] == itemName && int.Parse(recipeList[i][j * 2 + 1]) <= PlayerControl.laptopList[itemName])
+                    if (recipeList[i][j * 2] == itemCode && int.Parse(recipeList[i][j * 2 + 1]) <= PlayerControl.laptopList[itemCode])
                     {
                         itemNum += 1;
                     }
@@ -97,46 +97,46 @@ public class LaptopControl : MonoBehaviour
         }
     }
 
-    void SetItemR_pc(string itemName)
+    void SetItemR_pc(string itemCode)
     {
         GameObject content_down = Instantiate(content);
         content_down.transform.parent = laptopPanelR.transform;
 
         content_down.transform.localScale = new Vector3(1f, 1f, 1f);
-        content_down.name = itemName;
+        content_down.name = itemCode;
 
         GameObject icon = content_down.transform.GetChild(0).gameObject;
         GameObject name = content_down.transform.GetChild(1).gameObject;
         GameObject count = content_down.transform.GetChild(2).GetChild(0).gameObject;
 
-        string path = "Item/Icon/" + itemName;
+        string path = "Item/Icon/" + itemCode;
         Image icon_image = icon.GetComponent<Image>();
         icon_image.sprite = Resources.Load<Sprite>(path);
 
         TextMeshProUGUI name_text = name.GetComponent<TextMeshProUGUI>();
-        name_text.text = itemName;
+        name_text.text = PlayerControl.itemList[int.Parse(itemCode)][1];
 
         TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
-        count_text.text = PlayerControl.inventoryList[itemName].ToString();
+        count_text.text = PlayerControl.inventoryList[itemCode].ToString();
     }
 
-    void SetItemD_pc(string itemName)
+    void SetItemD_pc(string itemCode)
     {
         GameObject content_up = Instantiate(content_laptop);
         content_up.transform.parent = laptopPanelD.transform;
 
         content_up.transform.localScale = new Vector3(1f, 1f, 1f);
-        content_up.name = itemName;
+        content_up.name = itemCode;
 
         GameObject icon = content_up;
         GameObject count = content_up.transform.GetChild(0).gameObject;
 
-        string path = "Item/Icon/" + itemName;
+        string path = "Item/Icon/" + itemCode;
         Image icon_image = icon.GetComponent<Image>();
         icon_image.sprite = Resources.Load<Sprite>(path);
 
         TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
-        count_text.text = PlayerControl.laptopList[itemName].ToString();
+        count_text.text = PlayerControl.laptopList[itemCode].ToString();
     }
 
     void SetItemU_pc()

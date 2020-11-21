@@ -66,8 +66,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 205116a74fc64eb46bad1cb5d5bab902, type: 2}
+  m_sharedMaterial: {fileID: -226877970370610810, guid: 205116a74fc64eb46bad1cb5d5bab902,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -199,8 +200,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Textas
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 205116a74fc64eb46bad1cb5d5bab902, type: 2}
+  m_sharedMaterial: {fileID: -226877970370610810, guid: 205116a74fc64eb46bad1cb5d5bab902,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -410,9 +412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count_text: {fileID: 5864109984083934929}
-  content: {fileID: 5586016495573514026}
-  refrigeratorPanelL: {fileID: 4817209157969114216, guid: 2ef3657ea0498d84e9de13ce987787df,
-    type: 3}
 --- !u!1 &5586016495573514026
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +426,7 @@ GameObject:
   - component: {fileID: 3544417610834847302}
   - component: {fileID: 3807321916188531873}
   m_Layer: 5
-  m_Name: InventoryContent
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

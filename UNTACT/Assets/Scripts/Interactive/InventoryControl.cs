@@ -7,7 +7,7 @@ using TMPro;
 public class InventoryControl : MonoBehaviour
 {
 
-    public string itemName;
+    public string itemCode;
     public int itemCount;
 
     private bool isEnter;
@@ -48,7 +48,7 @@ public class InventoryControl : MonoBehaviour
             
             foreach (var key in PlayerControl.inventoryList.Keys)
             {
-                if(key == itemName)
+                if(key == itemCode)
                 {
                     isHas = true;
                     break;
@@ -58,16 +58,16 @@ public class InventoryControl : MonoBehaviour
             {
                 if (PlayerControl.inventoryMax > PlayerControl.inventoryNow)
                 {
-                    PlayerControl.inventoryList.Add(itemName, itemCount);
-                    PlayerControl.refrigeratorList.Add(itemName, 0);
-                    PlayerControl.laptopList.Add(itemName, 0);
+                    PlayerControl.inventoryList.Add(itemCode, itemCount);
+                    PlayerControl.refrigeratorList.Add(itemCode, 0);
+                    PlayerControl.laptopList.Add(itemCode, 0);
                     PlayerControl.inventoryNow += 1;
 
                 }
             }
             else
             {
-                PlayerControl.inventoryList[itemName] += itemCount;
+                PlayerControl.inventoryList[itemCode] += itemCount;
             }
 
             
