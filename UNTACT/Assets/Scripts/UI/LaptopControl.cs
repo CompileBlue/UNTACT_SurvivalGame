@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
 
 public class LaptopControl : MonoBehaviour
 {
@@ -23,12 +24,7 @@ public class LaptopControl : MonoBehaviour
     {
         isEnter = false;
 
-        List<string> recipe = new List<string>();
-        recipe.Add("bread");
-        recipe.Add("1");
-        recipe.Add("banana");
-        recipe.Add("2");
-        recipeList.Add(recipe);
+        CsvReader();
     }
 
     // Update is called once per frame
@@ -76,21 +72,21 @@ public class LaptopControl : MonoBehaviour
     void CheckRecipe()
     {
         
-        for (int i = 0; i < recipeList.Count; i++)
+        for (int i = 0; i < recipeList.Count - 1; i++)
         {
             int itemNum = 0;
             foreach (var itemCode in PlayerControl.laptopList.Keys)
             {
-                for (int j = 0; j < recipeList[i].Count / 2; j++)
+                for (int j = 1; j <= int.Parse(recipeList[i][1]); j++)
                 {
                     if (recipeList[i][j * 2] == itemCode && int.Parse(recipeList[i][j * 2 + 1]) <= PlayerControl.laptopList[itemCode])
                     {
                         itemNum += 1;
                     }
                 }
-                if(itemNum == recipeList[i].Count / 2)
+                if(itemNum == int.Parse(recipeList[i][1]))
                 {
-                    Debug.Log("can make");
+                    Debug.Log(recipeList[i][0]);    
                 }
             }
             
@@ -143,7 +139,22 @@ public class LaptopControl : MonoBehaviour
     {
         // item output
     }
+    void CsvReader()
+    {
+        var reader = new StreamReader(File.OpenRead(@"../UNTACT/Assets/Resources/Item/makeList.csv"));
 
+        while (!reader.EndOfStream)
+        {
+            var line = reader.ReadLine();
+            var values = line.Split(',');
+            List<string> list = new List<string>();
+            foreach (var content in values)
+            {
+                list.Add(content);
+            }
+            recipeList.Add(list);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         /* This conditional sentence is help you to interact with item or object.
