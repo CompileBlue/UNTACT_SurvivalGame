@@ -13,13 +13,13 @@ public class PhoneControl : MonoBehaviour
     private Vector2 mouseStart;
     private Vector2 mouseNow;
 
-    private AudioSource audioPlayer;
+    public static AudioSource audioPlayer;
     public AudioClip vibrationAudio;
 
     public GameObject[] Mode = new GameObject[5]; // 0 : Main, 1 : Health, 2 : Message, 3 : Inventory
 
-    private bool isVibration;
-    private bool isCall;
+    public static bool isVibration;
+    public static bool isCall = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +31,7 @@ public class PhoneControl : MonoBehaviour
         audioPlayer.volume = 0.5F;
 
         transform.localPosition = new Vector3(transform.localPosition.x, -290, transform.localPosition.z);
-        isVibration = true;
+        // isVibration = true;
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class PhoneControl : MonoBehaviour
             }
         }
     }
-    
+
     private void OnMouseDrag()
     {
         mouseNow = Input.mousePosition;
@@ -73,7 +73,7 @@ public class PhoneControl : MonoBehaviour
     {
         Debug.Log("Health");
         int mode = 1;
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             Mode[i].SetActive(false);
         }
@@ -91,7 +91,7 @@ public class PhoneControl : MonoBehaviour
     }
     public void InventoryBtn()
     {
-        Debug.Log("Inventory"); 
+        Debug.Log("Inventory");
         int mode = 3;
         for (int i = 0; i < 5; i++)
         {
@@ -142,7 +142,7 @@ public class PhoneControl : MonoBehaviour
         TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
         count_text.text = PlayerControl.inventoryList[itemName].ToString();
     }
-    void Vibration ()
+    public static void Vibration()
     {
         if (isVibration)
         {
