@@ -13,12 +13,14 @@ public class LaptopControl : MonoBehaviour
     public GameObject laptopPanelU;
     public GameObject laptopPanelD;
     public GameObject laptopPanelR;
+    public GameObject outputBtn;
 
     private bool isEnter;
 
     int recipeNum = 5;
 
     List<List<string>> recipeList = new List<List<string>>();
+    List<string> canMake = new List<string>();
     // Start is called before the first frame update
     void Start()
     {
@@ -71,7 +73,6 @@ public class LaptopControl : MonoBehaviour
 
     void CheckRecipe()
     {
-        
         for (int i = 0; i < recipeList.Count - 1; i++)
         {
             int itemNum = 0;
@@ -86,11 +87,94 @@ public class LaptopControl : MonoBehaviour
                 }
                 if(itemNum == int.Parse(recipeList[i][1]))
                 {
-                    Debug.Log(recipeList[i][0]);    
+                    bool isCanMake = true;
+                    for(int j = 0; j < canMake.Count; j++)
+                    {
+                        if(recipeList[i][0] == canMake[j])
+                        {
+                            isCanMake = false;
+                            break;
+                        }
+                    }
+                    if (isCanMake)
+                    {
+                        canMake.Add(recipeList[i][0]);
+                    }
+                    makeOutput(canMake[canMake.Count - 1]);
+                }
+                else
+                {
+                    canMake.Remove(recipeList[i][0]);
+                    makeOutput("");
                 }
             }
             
         }
+    }
+
+    void makeOutput(string itemCode)
+    {
+        if(itemCode == "")
+        {
+            Image icon_image = outputBtn.GetComponent<Image>();
+            icon_image.sprite = null;
+        }
+        else
+        {
+            string path = "Item/Icon/" + itemCode;
+            Image icon_image = outputBtn.GetComponent<Image>();
+            icon_image.sprite = Resources.Load<Sprite>(path);
+        }
+    }
+
+    public void clickOutput()
+    {
+        string itemCode = outputBtn.GetComponent<Image>().sprite.name;
+        bool isHas = false;
+
+        foreach (var key in PlayerControl.inventoryList.Keys)
+        {
+            if (key == itemCode)
+            {
+                isHas = true;
+                break;
+            }
+        }
+        if (!isHas)
+        {
+            if (PlayerControl.inventoryMax > PlayerControl.inventoryNow)
+            {
+                PlayerControl.inventoryList.Add(itemCode, 1);
+                PlayerControl.refrigeratorList.Add(itemCode, 0);
+                PlayerControl.laptopList.Add(itemCode, 0);
+                PlayerControl.inventoryNow += 1;
+                for(int i = 0; i < recipeList.Count; i++)
+                {
+                    if(recipeList[i][0] == itemCode)
+                    {
+                        for (int j = 1; j <= int.Parse(recipeList[i][1]); j++)
+                        {
+                            PlayerControl.laptopList[recipeList[i][j * 2]] -= int.Parse(recipeList[i][j * 2 + 1]);
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            PlayerControl.inventoryList[itemCode] += 1;
+            for (int i = 0; i < recipeList.Count; i++)
+            {
+                if (recipeList[i][0] == itemCode)
+                {
+                    for (int j = 1; j <= int.Parse(recipeList[i][1]); j++)
+                    {
+                        PlayerControl.laptopList[recipeList[i][j * 2]] -= int.Parse(recipeList[i][j * 2 + 1]);
+                    }
+                }
+            }
+        }
+        
     }
 
     void SetItemR_pc(string itemCode)
