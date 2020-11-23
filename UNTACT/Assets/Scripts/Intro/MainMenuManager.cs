@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    /* File Name : MainMenuManager.cs */
+
     public Image backGround;
     public InputField inputField;
     public Image fadeImage;
