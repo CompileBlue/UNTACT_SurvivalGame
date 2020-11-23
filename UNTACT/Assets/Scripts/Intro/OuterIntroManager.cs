@@ -9,6 +9,8 @@ using System;
 
 public class OuterIntroManager : MonoBehaviour
 {
+    /* File Name : OuterIntroManager */
+
     public Image talkPanel;
     public Text txt_Dialogue;
     public RawImage fadeImage;
