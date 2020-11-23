@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour
 
     public static int satiation = 100;
     private int satiationSpeed = 1;
-    private int health = 100;
+    public static int health = 100;
     private int healthSpeed = 1;
     private string disease = "normal";
     private int money = 1000000;
