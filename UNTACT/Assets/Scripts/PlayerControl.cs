@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     public static Dictionary<string, int> itemList = new Dictionary<string, int>();
     public static Dictionary<string, int> inventoryList = new Dictionary<string, int>();
     public static Dictionary<string, int> refrigeratorList = new Dictionary<string, int>();
+    public static Dictionary<string, int> laptopList = new Dictionary<string, int>();
     public static int inventoryMax = 10;
     public static int inventoryNow = 0;
     public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
@@ -19,6 +20,7 @@ public class PlayerControl : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI satiationText;
     public TextMeshProUGUI diseaseText;
+    public TextMeshProUGUI moneyText;
     public TextMeshProUGUI tutorialText;
 
     public float moveSpeed;
@@ -32,6 +34,7 @@ public class PlayerControl : MonoBehaviour
     private int health = 100;
     private int healthSpeed = 1;
     private string disease = "normal";
+    private int money = 1000000;
 
     private bool isTutorial = true;
 
@@ -68,7 +71,7 @@ public class PlayerControl : MonoBehaviour
     
     void Status()
     {
-        playTime += Time.deltaTime;
+        playTime += Time.deltaTime * 10;
 
         if((int)playTime % 3 == 0 && thisTime != (int)playTime)
         {
@@ -92,7 +95,7 @@ public class PlayerControl : MonoBehaviour
         healthText.text = "Health:" + health.ToString();
         satiationText.text = "Hungry:" + satiation.ToString();
         diseaseText.text = "Disease:" + disease;
-
+        moneyText.text = "Money : " + money; 
     }
     void TimeControl()
     {
