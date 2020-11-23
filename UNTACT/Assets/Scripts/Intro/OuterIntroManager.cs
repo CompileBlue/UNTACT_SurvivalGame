@@ -14,6 +14,7 @@ public class OuterIntroManager : MonoBehaviour
     public RawImage fadeImage;
     public Transform playerTransform;
     public Transform targetTransform;
+    public RawImage playerNamePanel;
     public Text playerNameText;
 
     static string pathOuter = @"D:/GitHub/UNTACT_SurvivalGame/UNTACT/Assets/TalkData/TalkData_Outer.txt";
@@ -66,7 +67,7 @@ public class OuterIntroManager : MonoBehaviour
 
     public static void LoadScene()
     {
-        SceneManager.LoadScene("Inner_Intro");
+        SceneManager.LoadScene("HouseInner");
     }
 
     public void Talk()
@@ -101,10 +102,12 @@ public class OuterIntroManager : MonoBehaviour
     {
         if (_flag == true)
         {
+            playerNamePanel.gameObject.SetActive(_flag);
             playerNameText.gameObject.SetActive(_flag);
         }
         else
         {
+            playerNamePanel.gameObject.SetActive(_flag);
             playerNameText.gameObject.SetActive(_flag);
         }
         // isMainName = _flag;
@@ -122,8 +125,6 @@ public class OuterIntroManager : MonoBehaviour
         OnOffNamePanel(true);
         allTextsOuter[count] = allTextsOuter[count].Replace("\\n", "\n");
         txt_Dialogue.text = allTextsOuter[count];
-        talkPanel.transform.position = new Vector3(600, -20.22f, 0);
-        talkPanel.transform.DOMove(new Vector3(600, 0, 0), 0.5f);
         count++;
     }
 
