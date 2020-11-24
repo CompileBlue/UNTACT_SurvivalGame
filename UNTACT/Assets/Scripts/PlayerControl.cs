@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
     public static Dictionary<string, int> refrigeratorList = new Dictionary<string, int>();
     public static Dictionary<string, int> laptopList = new Dictionary<string, int>();
     public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
+    public static List<string> moneyList = new List<string>();
     public static int inventoryMax = 10;
     public static int inventoryNow = 0;
     
@@ -97,7 +98,7 @@ public class PlayerControl : MonoBehaviour
         healthText.text = "Health:" + health.ToString();
         satiationText.text = "Hungry:" + satiation.ToString();
         diseaseText.text = "Disease:" + disease;
-        moneyText.text = "Money : " + money; 
+        moneyText.text = money + "원"; 
     }
     void TimeControl()
     {
@@ -130,4 +131,5 @@ public class PlayerControl : MonoBehaviour
             itemList.Add(list);
         }
     }
+
 }

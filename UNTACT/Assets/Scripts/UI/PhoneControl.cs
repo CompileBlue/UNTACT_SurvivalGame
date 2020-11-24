@@ -8,7 +8,11 @@ using TMPro;
 public class PhoneControl : MonoBehaviour
 {
     public GameObject inventoryPanel;
+    public GameObject bankPanel;
+    public GameObject recipePanel;
     public GameObject content;
+    public GameObject content_money;
+    public GameObject content_recipe;
 
     private Vector2 mouseStart;
     private Vector2 mouseNow;
@@ -32,6 +36,10 @@ public class PhoneControl : MonoBehaviour
 
         transform.localPosition = new Vector3(transform.localPosition.x, -290, transform.localPosition.z);
         isVibration = true;
+
+        Trade("+10000");
+        Trade("-10000");
+        Trade("+10000");
     }
 
     // Update is called once per frame
@@ -148,5 +156,41 @@ public class PhoneControl : MonoBehaviour
             audioPlayer.Stop();
             audioPlayer.time = 0;
         }
+    }
+    void Trade(string logMoney)
+    {
+        PlayerControl.moneyList.Add(logMoney);
+        GameObject content_bank = Instantiate(content_money);
+        content_bank.transform.parent = bankPanel.transform;
+
+        content_bank.transform.localScale = new Vector3(1f, 1f, 1f);
+
+        GameObject log = content_bank.transform.GetChild(0).gameObject;
+        TextMeshProUGUI log_text = log.GetComponent<TextMeshProUGUI>();
+        log_text.text = logMoney;
+
+    }
+
+    void SetRecipe(string itemCode)
+    {
+        GameObject content_recipe2= Instantiate(content);
+        content_recipe2.transform.parent = recipePanel.transform;
+
+        content_recipe2.transform.localScale = new Vector3(1f, 1f, 1f);
+        content_recipe2.name = itemCode;
+
+        GameObject icon = content_recipe2.transform.GetChild(0).gameObject;
+        GameObject name = content_recipe2.transform.GetChild(1).gameObject;
+        GameObject count = content_recipe2.transform.GetChild(2).GetChild(0).gameObject;
+
+        string path = "Item/Icon/" + itemCode;
+        Image icon_image = icon.GetComponent<Image>();
+        icon_image.sprite = Resources.Load<Sprite>(path);
+
+        TextMeshProUGUI name_text = name.GetComponent<TextMeshProUGUI>();
+        name_text.text = PlayerControl.itemList[int.Parse(itemCode)][1];
+
+        TextMeshProUGUI count_text = count.GetComponent<TextMeshProUGUI>();
+        count_text.text = PlayerControl.inventoryList[itemCode].ToString();
     }
 }
