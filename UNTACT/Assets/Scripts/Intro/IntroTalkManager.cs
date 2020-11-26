@@ -35,7 +35,7 @@ public class IntroTalkManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isSkipable == false)
         {
             ++count;
             StartCoroutine(_typing(GetTalk()));
