@@ -24,18 +24,15 @@ public class DoorControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             GameObject Player = GameObject.FindWithTag("Player");
-            Debug.Log("Press F Button");
             if (isEnter == "HouseDoor_01A")
             {
                 SceneManager.LoadScene("OutDoor");
-                Debug.Log("Press F Button HouseDoor_01A");
                 GameObject Door = GameObject.FindWithTag("HouseDoor_01B");
                 Player.transform.position = Door.transform.position;
             }
             if (isEnter == "HouseDoor_01B")
             {
                 SceneManager.LoadScene("House");
-                Debug.Log("Press F Button HouseDoor_01B");
                 GameObject Door = GameObject.FindWithTag("HouseDoor_01A");
                 Player.transform.position = Door.transform.position;
             }
@@ -50,12 +47,10 @@ public class DoorControl : MonoBehaviour
         {
             if(transform.tag == "HouseDoor_01A")
             {
-                Debug.Log("Interact with HouseDoor_01A");
                 isEnter = "HouseDoor_01A";
             }
             if (transform.tag == "HouseDoor_01B")
             {
-                Debug.Log("Interact with HouseDoor_01B");
                 isEnter = "HouseDoor_01B";
             }
         }
@@ -65,7 +60,6 @@ public class DoorControl : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("Away from Player");
             isEnter = "";
         }
     }

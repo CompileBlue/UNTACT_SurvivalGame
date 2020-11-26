@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,14 @@ using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
-    public static Dictionary<string, int> itemList = new Dictionary<string, int>();
+    public static List<List<string>> itemList = new List<List<string>>();
     public static Dictionary<string, int> inventoryList = new Dictionary<string, int>();
     public static Dictionary<string, int> refrigeratorList = new Dictionary<string, int>();
+    public static Dictionary<string, int> laptopList = new Dictionary<string, int>();
+    public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
+    public static List<string> moneyList = new List<string>();
     public static int inventoryMax = 10;
     public static int inventoryNow = 0;
-    public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
     
 
     public TextMeshProUGUI timeText;
@@ -19,6 +22,7 @@ public class PlayerControl : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI satiationText;
     public TextMeshProUGUI diseaseText;
+    public TextMeshProUGUI moneyText;
     public TextMeshProUGUI tutorialText;
 
     public float moveSpeed;
@@ -29,9 +33,10 @@ public class PlayerControl : MonoBehaviour
 
     public static int satiation = 100;
     private int satiationSpeed = 1;
-    private int health = 100;
+    public static int health = 100;
     private int healthSpeed = 1;
     private string disease = "normal";
+    private int money = 1000000;
 
     private bool isTutorial = true;
 
@@ -41,6 +46,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        CsvReader();
     }
 
     // Update is called once per frame
@@ -68,7 +74,7 @@ public class PlayerControl : MonoBehaviour
     
     void Status()
     {
-        playTime += Time.deltaTime;
+        playTime += Time.deltaTime * 10;
 
         if((int)playTime % 3 == 0 && thisTime != (int)playTime)
         {
@@ -92,7 +98,7 @@ public class PlayerControl : MonoBehaviour
         healthText.text = "Health:" + health.ToString();
         satiationText.text = "Hungry:" + satiation.ToString();
         diseaseText.text = "Disease:" + disease;
-
+        moneyText.text = money + "원"; 
     }
     void TimeControl()
     {
@@ -108,13 +114,22 @@ public class PlayerControl : MonoBehaviour
         }
         dayText.text = "Day - " + playDay.ToString();
     }
-    /*void Tutorial()
-    {
-        if (isTutorial)
-        {
-            isTutorial = false;
 
+    void CsvReader()
+    {
+        var reader = new StreamReader(File.OpenRead(@"../UNTACT/Assets/Resources/Item/itemList.csv"));
+        
+        while (!reader.EndOfStream)
+        {
+            var line = reader.ReadLine();
+            var values = line.Split(',');
+            List<string> list = new List<string>();
+            foreach(var content in values)
+            {
+                list.Add(content);
+            }
+            itemList.Add(list);
         }
-    }*/
+    }
 
 }
