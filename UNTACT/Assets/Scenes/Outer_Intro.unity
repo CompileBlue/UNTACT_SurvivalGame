@@ -474,13 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcbce78464195a4ca379ae29826a387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 0}
-  dayText: {fileID: 0}
-  healthText: {fileID: 0}
-  satiationText: {fileID: 0}
-  diseaseText: {fileID: 0}
-  tutorialText: {fileID: 0}
   moveSpeed: 3
+  tutorialText: {fileID: 0}
 --- !u!212 &885343493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -565,9 +560,9 @@ MonoBehaviour:
   targetTransform: {fileID: 2138631255}
   playerNamePanel: {fileID: 1050042348}
   playerNameText: {fileID: 408275071}
-  moveSpeed: 3
-  animTime: 2.5
-  sceneName: 
+  moveSpeed: 2
+  animTime: 2
+  sceneName: HouseInner
 --- !u!1 &1050042346
 GameObject:
   m_ObjectHideFlags: 0
