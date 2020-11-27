@@ -46,6 +46,27 @@ public class MainMenuManager : MonoBehaviour
                 isClicked = false;
                 Debug.Log("이름을 입력하지 않았습니다.");
             }
+            /*else
+            {
+                /*
+                switch (EnterNickName())
+                {
+                    case "409":
+                        Debug.Log("이미 중복된 닉네임이 있는 경우");
+                        break;
+
+                    case "400":
+                        if (EnterNickName.GetMessage().Contains("too long")) Debug.Log("20자 이상의 닉네임인 경우");
+                        else if (EnterNickName.GetMessage().Contains("blank")) Debug.Log("닉네임에 앞/뒤 공백이 있는경우");
+                        break;
+
+                    default:
+                        Debug.Log("서버 공통 에러 발생: " + EnterNickName.GetErrorCode());
+                        break;
+
+                }
+                */
+            //}
         }
     }
 
@@ -66,7 +87,7 @@ public class MainMenuManager : MonoBehaviour
             PlayFadeOut();
             if (fadeImage.color == Color.black)
             {
-                SceneManager.LoadScene("HouseOuter");
+                SceneManager.LoadScene("Outer_Intro");
             }
         }
     }
