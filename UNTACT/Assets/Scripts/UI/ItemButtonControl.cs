@@ -44,7 +44,25 @@ public class ItemButtonControl : MonoBehaviour
                 Destroy(transform.parent.gameObject);
             }
         }
-        
+        else if (transform.parent.parent.parent.name == "ScrollPanel_R_pc")
+        {
+            count_text.text = PlayerControl.inventoryList[transform.parent.name].ToString();
+            if (PlayerControl.inventoryList[transform.parent.name] <= 0)
+            {
+                Destroy(transform.parent.gameObject);
+                PlayerControl.inventoryNow -= 1;
+            }
+
+        }
+        else if (transform.parent.parent.name == "ScrollPanel_D_pc")
+        {
+            count_text.text = PlayerControl.laptopList[transform.name].ToString();
+            if (PlayerControl.laptopList[transform.name] <= 0)
+            {
+                Destroy(transform.gameObject);
+            }
+
+        }
         
     }
     public void ClickItem()
@@ -56,8 +74,19 @@ public class ItemButtonControl : MonoBehaviour
         {
             RefrigeratorR();
         }
+        else if (transform.parent.parent.parent.name == "ScrollPanel_L")
+        {
+            RefrigeratorL();
+        }
+        else if (transform.parent.parent.parent.name == "ScrollPanel_R_pc")
+        {
+            RefrigeratorR_pc();
+        }
+        else if (transform.parent.parent.name == "ScrollPanel_D_pc")
+        {
+            RefrigeratorD_pc();
+        }
 
-        
     }
     void PhoneItem()
     {
@@ -81,6 +110,30 @@ public class ItemButtonControl : MonoBehaviour
             PlayerControl.inventoryList[transform.parent.name] -= 1;
             PlayerControl.refrigeratorList[transform.parent.name] += 1;
             Debug.Log(PlayerControl.refrigeratorList[transform.parent.name]);
+        }
+    }
+    void RefrigeratorL()
+    {
+        if (PlayerControl.refrigeratorList[transform.parent.name] >= 1)
+        {
+            PlayerControl.refrigeratorList[transform.parent.name] -= 1;
+            PlayerControl.inventoryList[transform.parent.name] += 1;
+        }
+    }
+    void RefrigeratorR_pc()
+    {
+        if (PlayerControl.inventoryList[transform.parent.name] >= 1)
+        {
+            PlayerControl.inventoryList[transform.parent.name] -= 1;
+            PlayerControl.laptopList[transform.parent.name] += 1;
+        }
+    }
+    void RefrigeratorD_pc()
+    {
+        if (PlayerControl.laptopList[transform.name] >= 1)
+        {
+            PlayerControl.laptopList[transform.name] -= 1;
+            PlayerControl.inventoryList[transform.name] += 1;
         }
     }
 
