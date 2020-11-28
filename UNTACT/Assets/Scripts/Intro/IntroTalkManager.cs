@@ -5,54 +5,26 @@ using UnityEngine.UI;
 
 public class IntroTalkManager : MonoBehaviour
 {
+    [Tooltip("인트로 대사 모음")]
     public TextAsset context;
-
     public Image talkPanel;
     public Text talkText;
-    public Image introDiagram;
-    public Sprite[] dialogues = new Sprite[4];
 
-    private AudioSource audioPlayer;
-    public AudioClip audio;
-    public Camera mainCamera;
-    private AudioSource bgm;
+    private string m_text;
 
     int lineSize;
     int count = 0;
-    bool isOneShot = false;
+    bool isSkipable;
 
     void Start()
     {
-        audioPlayer = GetComponent<AudioSource>();
-        bgm = mainCamera.GetComponent<AudioSource>();
         StartCoroutine(_typing(GetTalk()));
     }
 
     
     void Update()
     {
-        LoadDialogue();
         Talk();
-    }
-
-    void LoadDialogue()
-    {
-        if (count == 0)
-        {
-            introDiagram.sprite = dialogues[0];
-        }
-        else if (count == 2)
-        {
-            introDiagram.sprite = dialogues[1];
-        }
-        else if (count == 4)
-        {
-            introDiagram.sprite = dialogues[2];
-        }
-        else if (count == 7)
-        {
-            introDiagram.sprite = dialogues[3];
-        }
     }
 
     void Talk()
@@ -62,22 +34,11 @@ public class IntroTalkManager : MonoBehaviour
             talkPanel.gameObject.SetActive(false);
             return;
         }
-        
-        if (talkText.text == GetTalk() && Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space) && isSkipable == false)
         {
             ++count;
             StartCoroutine(_typing(GetTalk()));
-        }
-
-        if (count == 7 && isOneShot == false)
-        {
-            isOneShot = true;
-            bgm.Stop();
-            audioPlayer.PlayOneShot(audio, 0.1F);
-        }
-        if (count == 8)
-        {
-            audioPlayer.Stop();
         }
     }
 
