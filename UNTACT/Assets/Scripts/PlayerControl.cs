@@ -35,8 +35,8 @@ public class PlayerControl : MonoBehaviour
     private int satiationSpeed = 1;
     public static int health = 100;
     private int healthSpeed = 1;
-    private string disease = "normal";
-    private int money = 1000000;
+    public static string disease = "normal";
+    public static int money = 1000000;
 
     private bool isTutorial = true;
 
