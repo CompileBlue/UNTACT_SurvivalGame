@@ -60,7 +60,7 @@ public class InventoryControl : MonoBehaviour
                 {
                     PlayerControl.inventoryList.Add(itemCode, itemCount);
                     PlayerControl.refrigeratorList.Add(itemCode, 0);
-                    PlayerControl.laptopList.Add(itemCode, 0);
+                    PlayerControl.blueprintList.Add(itemCode, 0);
                     PlayerControl.inventoryNow += 1;
 
                 }

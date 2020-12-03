@@ -56,8 +56,8 @@ public class ItemButtonControl : MonoBehaviour
         }
         else if (transform.parent.parent.name == "ScrollPanel_D_pc")
         {
-            count_text.text = PlayerControl.laptopList[transform.name].ToString();
-            if (PlayerControl.laptopList[transform.name] <= 0)
+            count_text.text = PlayerControl.blueprintList[transform.name].ToString();
+            if (PlayerControl.blueprintList[transform.name] <= 0)
             {
                 Destroy(transform.gameObject);
             }
@@ -125,14 +125,14 @@ public class ItemButtonControl : MonoBehaviour
         if (PlayerControl.inventoryList[transform.parent.name] >= 1)
         {
             PlayerControl.inventoryList[transform.parent.name] -= 1;
-            PlayerControl.laptopList[transform.parent.name] += 1;
+            PlayerControl.blueprintList[transform.parent.name] += 1;
         }
     }
     void RefrigeratorD_pc()
     {
-        if (PlayerControl.laptopList[transform.name] >= 1)
+        if (PlayerControl.blueprintList[transform.name] >= 1)
         {
-            PlayerControl.laptopList[transform.name] -= 1;
+            PlayerControl.blueprintList[transform.name] -= 1;
             PlayerControl.inventoryList[transform.name] += 1;
         }
     }

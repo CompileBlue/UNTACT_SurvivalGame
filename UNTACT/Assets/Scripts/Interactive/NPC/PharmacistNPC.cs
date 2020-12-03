@@ -64,7 +64,7 @@ public class PharmacistNPC : MonoBehaviour
             {
                 PlayerControl.inventoryList.Add(itemCode, 1);
                 PlayerControl.refrigeratorList.Add(itemCode, 0);
-                PlayerControl.laptopList.Add(itemCode, 0);
+                PlayerControl.blueprintList.Add(itemCode, 0);
                 PlayerControl.inventoryNow += 1;
             }
         }

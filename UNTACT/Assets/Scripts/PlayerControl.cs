@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
     public static List<List<string>> itemList = new List<List<string>>();
     public static Dictionary<string, int> inventoryList = new Dictionary<string, int>();
     public static Dictionary<string, int> refrigeratorList = new Dictionary<string, int>();
-    public static Dictionary<string, int> laptopList = new Dictionary<string, int>();
+    public static Dictionary<string, int> blueprintList = new Dictionary<string, int>();
     public static Dictionary<string, string[]> chatList = new Dictionary<string, string[]>();
     public static List<string> moneyList = new List<string>();
     public static int inventoryMax = 10;
