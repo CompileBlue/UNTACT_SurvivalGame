@@ -5,6 +5,54 @@ TextureImporter:
   - first:
       213: -8774960711759930775
     second: wall_paper_0
+  - first:
+      213: 2623471976953788538
+    second: wall_paper_0
+  - first:
+      213: -1033635039955644926
+    second: wall_paper_1
+  - first:
+      213: -3827931344489638054
+    second: wall_paper_2
+  - first:
+      213: 8410396968842223097
+    second: wall_paper_3
+  - first:
+      213: -6245584724122369381
+    second: wall_paper_4
+  - first:
+      213: 8320194771220544192
+    second: wall_paper_5
+  - first:
+      213: -1230302107152560087
+    second: wall_paper_6
+  - first:
+      213: 430280453383935405
+    second: wall_paper_7
+  - first:
+      213: -8410651719383928107
+    second: wall_paper_8
+  - first:
+      213: -7627883278004833697
+    second: wall_paper_9
+  - first:
+      213: 2234747246804379387
+    second: wall_paper_10
+  - first:
+      213: -4840145386869620999
+    second: wall_paper_11
+  - first:
+      213: 6517476416159336505
+    second: wall_paper_12
+  - first:
+      213: 1366553917336911627
+    second: wall_paper_13
+  - first:
+      213: -8743091985218154526
+    second: wall_paper_14
+  - first:
+      213: -8263942136426506342
+    second: wall_paper_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -48,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 286
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96a5a8179b3193680800000000000000
-      internalID: -8774960711759930775
+      spriteID: a78b5800dd1786420800000000000000
+      internalID: 2623471976953788538
       vertices: []
       indices: 
       edges: []

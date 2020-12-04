@@ -10,7 +10,6 @@ public class BluePrintControl : MonoBehaviour
     public GameObject blueprintUI;
     public GameObject content;
     public GameObject content_blueprint;
-    public GameObject blueprintPanelU;
     public GameObject blueprintPanelD;
     public GameObject blueprintPanelR;
     public GameObject outputBtn;

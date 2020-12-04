@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -1813929283721775214
     second: flooring_material_0
+  - first:
+      213: 3125352889443525502
+    second: flooring_material_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -48,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 286
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,9 +109,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 288
-        height: 288
+        y: 1
+        width: 287
+        height: 287
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 297b5145de0a3d6e0800000000000000
-      internalID: -1813929283721775214
+      spriteID: e73a505e4eb7f5b20800000000000000
+      internalID: 3125352889443525502
       vertices: []
       indices: 
       edges: []

@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\UI\LaptopControl.cs" />
     <Compile Include="Assets\Scripts\UI\PhoneControl.cs" />
     <Compile Include="Assets\Scripts\UI\RefrigeratorControl.cs" />
+    <Compile Include="Assets\Scripts\Warp\EnterHouse.cs" />
     <Compile Include="Assets\Simple Scene Fade Load System\Demo (You don't have to import this folder)\DemoScript.cs" />
     <Compile Include="Assets\Simple Scene Fade Load System\Scripts\Fader.cs" />
     <Compile Include="Assets\Simple Scene Fade Load System\Scripts\Initiate.cs" />
