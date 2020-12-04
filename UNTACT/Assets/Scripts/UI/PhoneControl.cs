@@ -63,6 +63,7 @@ public class PhoneControl : MonoBehaviour
     private void OnMouseDrag()
     {
         mouseNow = Input.mousePosition;
+        Debug.Log(mouseNow);
         if (transform.localPosition.y <= -120 && mouseNow.y - mouseStart.y > 0)
         {
             transform.localPosition += new Vector3(0, 20f, 0);
