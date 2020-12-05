@@ -19,14 +19,14 @@ public class LaptopControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && isEnter)
+        /*if (Input.GetKeyDown(KeyCode.F) && isEnter)
         {
             screen.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Escape) || !isEnter)
         {
             screen.SetActive(false);
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

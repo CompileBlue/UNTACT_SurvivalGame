@@ -3212,6 +3212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477790497714e594abbfb4e6a8af2bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screen: {fileID: 0}
 --- !u!114 &1604492694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3242,6 +3243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1604492686}
   canvas: {fileID: 1858432632}
+  camera: {fileID: 1129582014}
 --- !u!61 &1604492696
 BoxCollider2D:
   m_ObjectHideFlags: 0
