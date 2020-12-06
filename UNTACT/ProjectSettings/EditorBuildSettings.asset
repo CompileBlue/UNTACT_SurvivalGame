@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Outer_Intro.unity
     guid: 0e91af3877805e04281610175ffe144b
+  - enabled: 1
+    path: Assets/Scenes/MarketInside.unity
+    guid: c2747d6cf4981bb45862069a42be0b09
   m_configObjects: {}
