@@ -32,6 +32,10 @@ public class IntroTalkManager : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("HouseInside");
+        }
         LoadDialogue();
         Talk();
     }

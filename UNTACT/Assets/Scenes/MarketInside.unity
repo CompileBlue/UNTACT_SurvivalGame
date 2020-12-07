@@ -542,6 +542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 278231033}
   - component: {fileID: 278231032}
+  - component: {fileID: 278231034}
   m_Layer: 0
   m_Name: IceBar
   m_TagString: Untagged
@@ -613,6 +614,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &278231034
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278231031}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.7, y: 4.53}
+    newSize: {x: 5.7, y: 4.53}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.7, y: 4.53}
+  m_EdgeRadius: 0
 --- !u!1001 &456399691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -692,6 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486196773}
   - component: {fileID: 486196772}
+  - component: {fileID: 486196774}
   m_Layer: 0
   m_Name: IceBar
   m_TagString: Untagged
@@ -757,12 +785,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486196771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -63.13, y: -65.119995, z: -2}
+  m_LocalPosition: {x: -63.13, y: -64.74, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &486196774
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486196771}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.7, y: 4.53}
+    newSize: {x: 5.7, y: 4.53}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.7, y: 4.53}
+  m_EdgeRadius: 0
 --- !u!1001 &530360109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -842,6 +896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 687168784}
   - component: {fileID: 687168783}
+  - component: {fileID: 687168785}
   m_Layer: 0
   m_Name: VegetableBar
   m_TagString: Untagged
@@ -913,6 +968,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &687168785
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687168782}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.16844177, y: -1.044333}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.16, y: 9.85}
+    newSize: {x: 11.16, y: 9.85}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.206078, y: 7.7613344}
+  m_EdgeRadius: 0
 --- !u!1 &729877363
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +1004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 729877365}
   - component: {fileID: 729877364}
+  - component: {fileID: 729877366}
   m_Layer: 0
   m_Name: IceBar
   m_TagString: Untagged
@@ -988,12 +1070,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729877363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -63.13, y: -58.949997, z: -1}
+  m_LocalPosition: {x: -63.13, y: -60.260002, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &729877366
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729877363}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.7, y: 4.53}
+    newSize: {x: 5.7, y: 4.53}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.7, y: 4.53}
+  m_EdgeRadius: 0
 --- !u!1001 &791591834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1255,6 +1363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 940883991}
   - component: {fileID: 940883990}
+  - component: {fileID: 940883992}
   m_Layer: 0
   m_Name: FruitBar
   m_TagString: Untagged
@@ -1326,6 +1435,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &940883992
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940883989}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.55585766, y: -0.2863524}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.38, y: 6.21}
+    newSize: {x: 10.38, y: 6.21}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.268286, y: 5.6372952}
+  m_EdgeRadius: 0
 --- !u!1001 &983137868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1850,6 +1985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526445659}
   - component: {fileID: 1526445658}
+  - component: {fileID: 1526445660}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -1921,6 +2057,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1526445660
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526445657}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.45479202, y: -0.45479107}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.11, y: 6.91}
+    newSize: {x: 7.11, y: 6.91}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.2004166, y: 6.0004177}
+  m_EdgeRadius: 0
 --- !u!1001 &1531823612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2207,6 +2369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973015797}
   - component: {fileID: 1973015796}
+  - component: {fileID: 1973015798}
   m_Layer: 0
   m_Name: IceBar
   m_TagString: Untagged
@@ -2272,12 +2435,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973015795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.23, y: -58.39, z: -2}
+  m_LocalPosition: {x: -37.23, y: -56.95, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1973015798
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973015795}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.7, y: 4.53}
+    newSize: {x: 5.7, y: 4.53}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.7, y: 4.53}
+  m_EdgeRadius: 0
 --- !u!1001 &1976385172
 PrefabInstance:
   m_ObjectHideFlags: 0
