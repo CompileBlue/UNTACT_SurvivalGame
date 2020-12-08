@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class PlayerControl : MonoBehaviour
     public static List<string> moneyList = new List<string>();
     public static int inventoryMax = 10;
     public static int inventoryNow = 0;
-    
+
+    public Sprite playerBack;
+    public Sprite playerToward;
 
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dayText;
@@ -70,6 +73,16 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 newVelocity = new Vector3(xSpeed, ySpeed, 0f);
         playerRigidbody.velocity = newVelocity;
+
+        if(ySpeed > 0)
+        {
+            SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
+            playerSprite.sprite = playerBack;
+        }else if(ySpeed < 0)
+        {
+            SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
+            playerSprite.sprite = playerToward;
+        }
     }
     
     void Status()

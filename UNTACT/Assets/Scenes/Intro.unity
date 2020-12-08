@@ -1942,7 +1942,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3151,6 +3151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcbce78464195a4ca379ae29826a387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBack: {fileID: 21300000, guid: 0e1ff52549340144297e4c56356cf1d7, type: 3}
+  playerToward: {fileID: 21300000, guid: 5680446c6e2f7334cae707326a246dde, type: 3}
   timeText: {fileID: 695023822}
   dayText: {fileID: 1945696736}
   healthText: {fileID: 2050415483}
