@@ -3153,6 +3153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBack: {fileID: 21300000, guid: 0e1ff52549340144297e4c56356cf1d7, type: 3}
   playerToward: {fileID: 21300000, guid: 5680446c6e2f7334cae707326a246dde, type: 3}
+  playerLeft: {fileID: 21300000, guid: 23d726c948bd52a44bbd360f590fc9bd, type: 3}
+  playerRight: {fileID: 21300000, guid: 0e2a06d9b82aa28479042a0996b20e68, type: 3}
   timeText: {fileID: 695023822}
   dayText: {fileID: 1945696736}
   healthText: {fileID: 2050415483}

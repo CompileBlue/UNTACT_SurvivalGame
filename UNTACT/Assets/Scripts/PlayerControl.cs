@@ -19,6 +19,8 @@ public class PlayerControl : MonoBehaviour
 
     public Sprite playerBack;
     public Sprite playerToward;
+    public Sprite playerLeft;
+    public Sprite playerRight;
 
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dayText;
@@ -82,6 +84,17 @@ public class PlayerControl : MonoBehaviour
         {
             SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
             playerSprite.sprite = playerToward;
+        }
+
+        if (xSpeed < 0)
+        {
+            SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
+            playerSprite.sprite = playerLeft;
+        }
+        else if (xSpeed > 0)
+        {
+            SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
+            playerSprite.sprite = playerRight;
         }
     }
     
