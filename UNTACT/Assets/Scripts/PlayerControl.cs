@@ -23,6 +23,8 @@ public class PlayerControl : MonoBehaviour
     public Sprite playerLeft;
     public Sprite playerRight;
 
+    public Image health_dark;  //pos 86 -> 73.5, size 25 -> 0.1
+
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI dayText;
     public TextMeshProUGUI healthText;
@@ -106,23 +108,26 @@ public class PlayerControl : MonoBehaviour
         {
             healthSpeed = 0;
         }
-        if ((int)playTime % 200 == 0 && thisTime != (int)playTime)
+        if ((int)playTime % 2 == 0 && thisTime != (int)playTime)
         {
             thisTime = (int)playTime;
-            satiation -= satiationSpeed;
             health -= healthSpeed;
             if(SceneManager.GetActiveScene().name == "Main")
             {
                 healthSpeed += 1;
             }
         }
-        if(satiation >= 100)
-        {
-            satiation = 100;
-        }
+        health_dark.transform.localPosition = new Vector3(-22, 23.5f + 0.13f * health, 29.5f);
+        health_dark.rectTransform.sizeDelta = new Vector2(30, 25 - 0.25f * health);
+
         if (health >= 100)
         {
             health = 100;
+        }
+        if(health <= 0)
+        {
+            health = 0;
+            healthSpeed = 0;
         }
     }
     void PhoneUI()
