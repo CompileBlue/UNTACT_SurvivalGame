@@ -15,7 +15,7 @@ public class DontDestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Intro" || SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "Intro" || SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "CreateCharacter")
         {
             canvas.SetActive(false);
             camera.SetActive(false);

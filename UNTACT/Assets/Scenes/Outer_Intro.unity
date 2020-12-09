@@ -474,8 +474,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcbce78464195a4ca379ae29826a387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  playerBack: {fileID: 0}
+  playerToward: {fileID: 0}
+  playerLeft: {fileID: 0}
+  playerRight: {fileID: 0}
+  health_dark: {fileID: 0}
+  timeText: {fileID: 0}
+  dayText: {fileID: 0}
+  healthText: {fileID: 0}
+  satiationText: {fileID: 0}
+  diseaseText: {fileID: 0}
+  moneyText: {fileID: 0}
   tutorialText: {fileID: 0}
+  moveSpeed: 3
 --- !u!212 &885343493
 SpriteRenderer:
   m_ObjectHideFlags: 0

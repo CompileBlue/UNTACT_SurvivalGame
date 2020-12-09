@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -34,7 +35,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (isClicked == true)
         {
-            if (inputField.text != "")
+            if (CheckNickName())
             {
                 isEnterName = true;
                 playerName = inputField.text;
@@ -44,14 +45,22 @@ public class MainMenuManager : MonoBehaviour
             {
                 isEnterName = false;
                 isClicked = false;
-                Debug.Log("이름을 입력하지 않았습니다.");
+                Debug.Log("잘못된 닉네임입니다. 다시 입력해 주세요.");
             }
         }
     }
 
-    public void LoadNewGameBanner()
+    private bool CheckNickName()
     {
-        backGround.gameObject.SetActive(true);
+        if (Regex.IsMatch(inputField.text, "^[0-9a-zA-z가-힣]*$") && inputField.text != "" && inputField.text.Contains("blank") != true && inputField.text.Length <= 8)
+            return true; // nickname check
+        else
+            return false;
+    }
+
+    public void LoadNewGame()
+    {
+        SceneManager.LoadScene("CreateCharacter");
     }
 
     public void SetButtonClicked()

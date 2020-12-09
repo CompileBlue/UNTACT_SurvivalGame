@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class IntroTalkManager : MonoBehaviour
 {
+    private MainMenuManager mainMenuManager;
+
     public TextAsset context;
 
     public Image talkPanel;
     public Text talkText;
     public Image introDiagram;
+    public Image fadeInImage;
     public Sprite[] dialogues = new Sprite[4];
 
     private AudioSource audioPlayer;
@@ -21,9 +24,13 @@ public class IntroTalkManager : MonoBehaviour
     int lineSize;
     int count = 0;
     bool isOneShot = false;
+    float start;
+    float end;
+    float time;
 
     void Start()
     {
+        FadeInAnim();
         audioPlayer = GetComponent<AudioSource>();
         bgm = mainCamera.GetComponent<AudioSource>();
         StartCoroutine(_typing(GetTalk()));
@@ -38,6 +45,28 @@ public class IntroTalkManager : MonoBehaviour
         }
         LoadDialogue();
         Talk();
+    }
+
+    void FadeInAnim()
+    {
+        StartCoroutine("FadeIn");
+    }
+
+    IEnumerator FadeIn()
+    {
+        start = 1f;
+        end = 0f;
+        Color color = fadeInImage.color;
+        time = 0f;
+        color.a = Mathf.Lerp(start, end, time);
+        
+        while (color.a > 0f)
+        {
+            time += Time.deltaTime / 3f;
+            color.a = Mathf.Lerp(start, end, time);
+            fadeInImage.color = color;
+            yield return null;
+        }
     }
 
     void LoadDialogue()
@@ -62,28 +91,31 @@ public class IntroTalkManager : MonoBehaviour
 
     void Talk()
     {
-        if (GetTalk() == null)
+        if (fadeInImage.color.a == 0)
         {
-            talkPanel.gameObject.SetActive(false);
-            return;
-        }
-        
-        if (talkText.text == GetTalk() && Input.GetKeyDown(KeyCode.Space))
-        {
-            ++count;
-            StartCoroutine(_typing(GetTalk()));
-        }
+            if (GetTalk() == null)
+            {
+                talkPanel.gameObject.SetActive(false);
+                return;
+            }
 
-        if (count == 7 && isOneShot == false)
-        {
-            isOneShot = true;
-            bgm.Stop();
-            audioPlayer.PlayOneShot(audio, 0.1F);
-        }
-        if (count == 8)
-        {
-            audioPlayer.Stop();
-            SceneManager.LoadScene("HouseInside");
+            if (talkText.text == GetTalk() && Input.GetKeyDown(KeyCode.Space))
+            {
+                ++count;
+                StartCoroutine(_typing(GetTalk()));
+            }
+
+            if (count == 7 && isOneShot == false)
+            {
+                isOneShot = true;
+                bgm.Stop();
+                audioPlayer.PlayOneShot(audio, 0.1F);
+            }
+            if (count == 8)
+            {
+                audioPlayer.Stop();
+                SceneManager.LoadScene("HouseInside");
+            }
         }
     }
 
