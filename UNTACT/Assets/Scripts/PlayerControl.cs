@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class PlayerControl : MonoBehaviour
     public static int satiation = 100;
     private int satiationSpeed = 1;
     public static int health = 100;
-    private int healthSpeed = 1;
+    private int healthSpeed = 0;
     public static string disease = "normal";
     public static int money = 1000000;
 
@@ -76,16 +77,6 @@ public class PlayerControl : MonoBehaviour
         Vector3 newVelocity = new Vector3(xSpeed, ySpeed, 0f);
         playerRigidbody.velocity = newVelocity;
 
-        if(ySpeed > 0)
-        {
-            SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
-            playerSprite.sprite = playerBack;
-        }else if(ySpeed < 0)
-        {
-            SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
-            playerSprite.sprite = playerToward;
-        }
-
         if (xSpeed < 0)
         {
             SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
@@ -96,17 +87,34 @@ public class PlayerControl : MonoBehaviour
             SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
             playerSprite.sprite = playerRight;
         }
+        if (ySpeed > 0)
+        {
+            SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
+            playerSprite.sprite = playerBack;
+        }
+        else if (ySpeed < 0)
+        {
+            SpriteRenderer playerSprite = this.GetComponent<SpriteRenderer>();
+            playerSprite.sprite = playerToward;
+        }
     }
     
     void Status()
     {
         playTime += Time.deltaTime * 10;
-
-        if((int)playTime % 3 == 0 && thisTime != (int)playTime)
+        if (SceneManager.GetActiveScene().name != "Main")
+        {
+            healthSpeed = 0;
+        }
+        if ((int)playTime % 200 == 0 && thisTime != (int)playTime)
         {
             thisTime = (int)playTime;
             satiation -= satiationSpeed;
             health -= healthSpeed;
+            if(SceneManager.GetActiveScene().name == "Main")
+            {
+                healthSpeed += 1;
+            }
         }
         if(satiation >= 100)
         {

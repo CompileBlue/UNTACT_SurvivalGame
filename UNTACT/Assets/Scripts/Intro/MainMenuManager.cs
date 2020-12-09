@@ -86,4 +86,9 @@ public class MainMenuManager : MonoBehaviour
         color.a = Mathf.Lerp(fadeOutStart, fadeOutEnd, fadeOutTime);
         fadeImage.color = color;
     }
+
+    public void clickEndBtn()
+    {
+        Application.Quit();
+    }
 }
