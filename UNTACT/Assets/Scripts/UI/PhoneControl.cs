@@ -34,12 +34,10 @@ public class PhoneControl : MonoBehaviour
         audioPlayer.time = 0;
         audioPlayer.volume = 0.5F;
 
-        transform.localPosition = new Vector3(transform.localPosition.x, -290, transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, -700, transform.localPosition.z);
+        Debug.Log(transform.position.y);
         isVibration = true;
 
-        Trade("+10000");
-        Trade("-10000");
-        Trade("+10000");
     }
 
     // Update is called once per frame
@@ -63,13 +61,13 @@ public class PhoneControl : MonoBehaviour
     private void OnMouseDrag()
     {
         mouseNow = Input.mousePosition;
-        if (transform.localPosition.y <= -120 && mouseNow.y - mouseStart.y > 0)
+        if (transform.localPosition.y <= -290 && mouseNow.y - mouseStart.y > 0)
         {
-            transform.localPosition += new Vector3(0, 20f, 0);
+            transform.localPosition += new Vector3(0, 40f, 0);
         }
-        if (transform.localPosition.y >= -280 && mouseNow.y - mouseStart.y < 0)
+        if (transform.localPosition.y >= -710 && mouseNow.y - mouseStart.y < 0)
         {
-            transform.localPosition -= new Vector3(0, 20f, 0);
+            transform.localPosition -= new Vector3(0, 40f, 0);
         }
     }
     private void OnMouseDown()
