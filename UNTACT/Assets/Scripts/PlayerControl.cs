@@ -108,7 +108,7 @@ public class PlayerControl : MonoBehaviour
         {
             healthSpeed = 0;
         }
-        if ((int)playTime % 2 == 0 && thisTime != (int)playTime)
+        if ((int)playTime % 100 == 0 && thisTime != (int)playTime)
         {
             thisTime = (int)playTime;
             health -= healthSpeed;

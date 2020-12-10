@@ -92,14 +92,10 @@ public class ItemButtonControl : MonoBehaviour
     {
         if (PlayerControl.inventoryList[transform.parent.name] >= 1)
         {
-            PlayerControl.inventoryList[transform.parent.name] -= 1;
             if(PlayerControl.itemList[int.Parse(transform.parent.name)][2] == "food")
             {
-                PlayerControl.satiation += int.Parse(PlayerControl.itemList[int.Parse(transform.parent.name)][4]);
-            }
-            else if (PlayerControl.itemList[int.Parse(transform.parent.name)][2] == "medicine")
-            {
-                PlayerControl.health += int.Parse(PlayerControl.itemList[int.Parse(transform.parent.name)][4]);
+                PlayerControl.inventoryList[transform.parent.name] -= 1;
+                PlayerControl.health += int.Parse(PlayerControl.itemList[int.Parse(transform.parent.name)][3]);
             }
         }
     }

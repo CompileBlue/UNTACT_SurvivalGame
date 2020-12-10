@@ -87,6 +87,10 @@ public class CreateCharacterManager : MonoBehaviour
         fadeImage.color = color;
     }
 
+    public void clickCancleBtn()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void clickEndBtn()
     {
         Application.Quit();
