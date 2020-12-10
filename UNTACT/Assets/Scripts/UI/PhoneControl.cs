@@ -65,7 +65,7 @@ public class PhoneControl : MonoBehaviour
         {
             transform.localPosition += new Vector3(0, 40f, 0);
         }
-        if (transform.localPosition.y >= -710 && mouseNow.y - mouseStart.y < 0)
+        if (transform.localPosition.y >= -660 && mouseNow.y - mouseStart.y < 0)
         {
             transform.localPosition -= new Vector3(0, 40f, 0);
         }
