@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    public GameObject player, canvas, camera;
+    public GameObject player, canvas, camera, bgm;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +28,6 @@ public class DontDestroy : MonoBehaviour
         DontDestroyOnLoad(player.gameObject);
         DontDestroyOnLoad(canvas.gameObject);
         DontDestroyOnLoad(camera.gameObject);
+        DontDestroyOnLoad(bgm.gameObject);
     }
 }

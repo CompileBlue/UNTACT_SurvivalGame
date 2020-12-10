@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Intro\TypeWriterEffect.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\System\DontDestroy.cs" />
+    <Compile Include="Assets\Scripts\System\bgmControl.cs" />
     <Compile Include="Assets\Scripts\UI\BluePrintControl.cs" />
     <Compile Include="Assets\Scripts\UI\BoxControler.cs" />
     <Compile Include="Assets\Scripts\UI\FadeIn.cs" />

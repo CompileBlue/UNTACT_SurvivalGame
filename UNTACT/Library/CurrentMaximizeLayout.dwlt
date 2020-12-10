@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 957
-  m_MinSize: {x: 708, y: 492}
-  m_MaxSize: {x: 18003, y: 14042}
+  m_MinSize: {x: 705, y: 471}
+  m_MaxSize: {x: 18000, y: 14021}
   vertical: 0
-  controlID: 1552
+  controlID: 16855
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,10 +139,10 @@ MonoBehaviour:
     y: 0
     width: 1323
     height: 957
-  m_MinSize: {x: 231, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
+  m_MinSize: {x: 230, y: 471}
+  m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 1485
+  controlID: 16856
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -208,9 +208,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.88892436, y: -0.9484414, z: 52.482887}
+    m_Target: {x: 0, y: 0, z: 90.41681}
     speed: 2
-    m_Value: {x: 0.88892436, y: -0.9484414, z: 52.482887}
+    m_Value: {x: 0, y: 0, z: 90.41681}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -260,9 +260,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.1843348
+    m_Target: 13.463375
     speed: 2
-    m_Value: 5.1843348
+    m_Value: 13.463375
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -460,19 +460,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UI
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ttd85\Documents\GitHub\UNTACT_SurvivalGame\UNTACT
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 142}
-    m_SelectedIDs: 763e0000
-    m_LastClickedID: 15990
+    m_SelectedIDs: 6a3e0000
+    m_LastClickedID: 15978
     m_ExpandedIDs: 000000004e3e0000503e0000523e0000543e0000563e0000583e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -526,9 +526,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 60390000
-    m_LastClickedInstanceID: 14688
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 58b6ffff
+    m_LastClickedInstanceID: -18856
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000d4670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 8}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -579,9 +579,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 673
+    y: 679
     width: 1322
-    height: 326
+    height: 330
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &11
 MonoBehaviour:
@@ -640,7 +640,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 22f2ffff76f2ffff6cf9ffff3afbffff3e3f0000
+      m_ExpandedIDs: 00b7ffff10b7ffff68b7ffff76b7ffff96b7ffff76b8ffff3eb9ffff14edffff6eedffff22eeffff32f1ffffb8f1ffff28f7fffffaf7ffff3afbffff6c59000056840000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -726,5 +726,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 14688
+  m_LastInspectedObjectInstanceID: -18856
   m_LastVerticalScrollValue: 0
